@@ -43,6 +43,8 @@ export default class PruParser {
 
 			const accumulatePremiun = this.dataNumStringToNumber(this.data[i][1]);
 
+			let lastParsedDataline = null;
+
 			/**
 			The premiun will be increased in the beginning &
 			will be dropdown till all premiuns are settled
@@ -50,13 +52,16 @@ export default class PruParser {
 			if (i > 0) {
 				const accumulatePremiunLastYear = this.dataNumStringToNumber(this.data[i-1][1]);
 
+				lastParsedDataline = parsedDetails[i-1];
+
 				if (accumulatePremiun > accumulatePremiunLastYear) {
 					totalPaymentYear = parseInt(this.data[i][0]);
 					totalPremiun = accumulatePremiun;	
 				}
 			}
 
-			parsedDetails[i] = this.parseDataLine(ANBandYear.ANB, ANBandYear.year, accumulatePremiun, this.data[i]);
+
+			parsedDetails[i] = this.parseDataLine(ANBandYear.ANB, ANBandYear.year, accumulatePremiun, this.data[i], lastParsedDataline);
 		}
 
 		return {
@@ -75,6 +80,7 @@ export default class PruParser {
 		@param year
 		@param accumulatePremiun
 		@param dataline
+		@param lastParsedDataline
 
 		@return data line {
 			ANB: 
@@ -83,7 +89,7 @@ export default class PruParser {
 			...{other pre-proposal based details}
 		}
 	*/
-	parseDataLine(ANB, year, accumulatePremiun, dataline) {
+	parseDataLine(ANB, year, accumulatePremiun, dataline, lastParsedDataline) {
 
 	}
 

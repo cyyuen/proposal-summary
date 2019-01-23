@@ -6,22 +6,46 @@ import PruParser from "./PruParser.js"
  */
 export default class SingleCCParser extends PruParser {
 
-	parseDataLine(ANB, year, accumulatePremiun, dataline) {
+	constructor(ANB, data) {
+		super(ANB, data);
+		this.totalFreeInsuredYears = 0;
+	}
 
-		const total = this.dataNumStringToNumber(dataline[5]);
+	parse() {
+		let parsedData = super.parse();
+
+		Object.assign(parsedData.summary, {
+			totalFreeInsuredYears: this.totalFreeInsuredYears,
+			basicInsured: parsedData.details[0].basicInsured,
+			freeInsured: parsedData.details[0].freeInsured,
+		});
+
+		return parsedData;
+	}
+
+	parseDataLine(ANB, year, accumulatePremiun, dataline, lastParsedDataline) {
+
+		const basicInsured = this.dataNumStringToNumber(dataline[5]);
+		const freeInsured = this.dataNumStringToNumber(dataline[6]);
+
+		if (lastParsedDataline) {
+			if (freeInsured == 0 && lastParsedDataline.freeInsured != 0) {
+				this.totalFreeInsuredYears = year - 1;
+			}
+		}
 
 		return {
 			ANB: ANB,
 			year: year,
 			accumulatePremiun: accumulatePremiun,
 			// 基本保额
-			basicInsured: this.dataNumStringToNumber(data[i][5]),
+			basicInsured: basicInsured,
 			// 赠送保额
-			freeInsured: this.dataNumStringToNumber(data[i][6]),
+			freeInsured: freeInsured,
 			// 现金价值
-			cashValue: this.dataNumStringToNumber(data[i][4]),
+			cashValue: this.dataNumStringToNumber(dataline[4]),
 			// 总保额
-			totalInsured: this.dataNumStringToNumber(data[i][8])
+			totalInsured: this.dataNumStringToNumber(dataline[8])
 		}
 	}
 }

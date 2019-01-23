@@ -8,10 +8,12 @@ import SingleCCParser from './SingleCCParser.js'
 export default class MixedCCParser extends PruParser {
 
 	constructor(ANB, data1,  data2) {
+		super(ANB, null);
+
 		this.ANB = ANB;
 	 	this.ccParser1 = new SingleCCParser(ANB, data1);
 		this.ccParser2 = new SingleCCParser(ANB, data2);
-		this.mixParser = new SingleCCParser(ANB, this.mixCCData(data1, data2));
+		this.mixParser = new SingleCCParser(ANB, this.mixCCDetails(data1, data2));
 	}
 
 	parse() {
@@ -32,10 +34,10 @@ export default class MixedCCParser extends PruParser {
 	mixCCDetails(ccDetails1, ccDetails2) {
 		let data = [];
 
-		for (var i = 0, len = data1.length; i != len; ++i) {
+		for (var i = 0, len = ccDetails1.length; i != len; ++i) {
 
-		var plan1 = data1[i];
-		var plan2 = data2[i];
+		var plan1 = ccDetails1[i];
+		var plan2 = ccDetails2[i];
 
 		// first few rows
 		if (plan1.length === 9) {

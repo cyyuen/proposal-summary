@@ -37,7 +37,7 @@ export default class ProposalSummaryView extends React.Component {
 		let plan2Data = null;
 
 		if (plan2) {
-			const plan2Data = inputStringToData(plan2);
+			plan2Data = inputStringToData(plan2);
 		}
 		
 		let parser = null;

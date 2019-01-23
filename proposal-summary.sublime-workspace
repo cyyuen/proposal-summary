@@ -1,0 +1,692 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"MixedCC",
+				"MixedCCSummaryView"
+			],
+			[
+				"Sing",
+				"SingleCCSummaryView"
+			],
+			[
+				"PLP",
+				"PLP2SummaryView"
+			],
+			[
+				"PLCS",
+				"PLCSSummaryView"
+			],
+			[
+				"EG",
+				"EGSP2AccSummaryView"
+			],
+			[
+				"E",
+				"EGSP2AccParser"
+			],
+			[
+				"pl",
+				"planSelect"
+			],
+			[
+				"parser",
+				"parsers"
+			],
+			[
+				"Pro",
+				"ProposalInputForm"
+			],
+			[
+				"value",
+				"values"
+			],
+			[
+				"propos",
+				"proposalData"
+			],
+			[
+				"pro",
+				"proposal"
+			],
+			[
+				"pa",
+				"parse"
+			],
+			[
+				"mix",
+				"mixParser"
+			],
+			[
+				"d",
+				"data2"
+			],
+			[
+				"da",
+				"data1"
+			],
+			[
+				"par",
+				"parsedData1"
+			],
+			[
+				"to",
+				"totalPremiun"
+			],
+			[
+				"sum",
+				"summary1"
+			],
+			[
+				"su",
+				"summary2"
+			],
+			[
+				"tao",
+				"totalPaymentYear"
+			],
+			[
+				"data",
+				"data2"
+			],
+			[
+				"data1",
+				"data1"
+			],
+			[
+				"AN",
+				"ANB"
+			],
+			[
+				"pre",
+				"Premiun"
+			],
+			[
+				"tot",
+				"totalPaymentYear"
+			],
+			[
+				"ex",
+				"extractAgeAndYear"
+			],
+			[
+				"ANB",
+				"ANBandYear"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"parse",
+				"parse"
+			],
+			[
+				"im",
+				"imgBuf"
+			],
+			[
+				"sendA",
+				"sendAppMsgToContact"
+			],
+			[
+				"send",
+				"sendImgToContact"
+			],
+			[
+				"con",
+				"contact"
+			],
+			[
+				"sen",
+				"sendMessageToContact"
+			],
+			[
+				"get",
+				"getAllContacts"
+			],
+			[
+				"cona",
+				"contacts"
+			],
+			[
+				"lab",
+				"labelNames"
+			],
+			[
+				"la",
+				"labelNames"
+			],
+			[
+				"co",
+				"contact"
+			],
+			[
+				"user",
+				"userName"
+			],
+			[
+				"loc",
+				"localContact"
+			],
+			[
+				"sent",
+				"sentName"
+			],
+			[
+				"usr",
+				"userName"
+			],
+			[
+				"toa",
+				"totalContactToSent"
+			],
+			[
+				"fr",
+				"friends"
+			],
+			[
+				"for",
+				"format"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"inc",
+				"includeLabels"
+			],
+			[
+				"conta",
+				"contact"
+			],
+			[
+				"cont",
+				"contact"
+			],
+			[
+				"msg",
+				"msgConfig"
+			],
+			[
+				"app",
+				"appmsg"
+			],
+			[
+				"lo",
+				"loopPersonalContact"
+			],
+			[
+				"sync",
+				"syncContact"
+			],
+			[
+				"number",
+				"numberToLocalString"
+			],
+			[
+				"star",
+				"startAge"
+			],
+			[
+				"nex",
+				"nextSession"
+			],
+			[
+				"de",
+				"detail"
+			],
+			[
+				"time",
+				"timeToSleep"
+			],
+			[
+				"gener",
+				"generateCIRCIMSummary"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"inp",
+				"inputStr"
+			],
+			[
+				"avat",
+				"avatar"
+			],
+			[
+				"img",
+				"imgID"
+			],
+			[
+				"base",
+				"base_appeal"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"si",
+				"sign_page"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"st",
+				"style\tAttr"
+			],
+			[
+				"s",
+				"style"
+			],
+			[
+				"close",
+				"close-alert"
+			],
+			[
+				"a",
+				"appeal"
+			],
+			[
+				"back",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "components/ProposalSummaryView.jsx",
+			"settings":
+			{
+				"buffer_size": 2331,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "parsers/PruParser.js",
+			"settings":
+			{
+				"buffer_size": 2383,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "1 15,175 0 0 0 0\n2 30,349 0 0 0 0\n3 45,524 22,630 589 1,109 24,328\n4 60,698 34,410 1,784 2,226 38,420\n5 75,873 47,275 3,602 3,844 54,721\n6 75,873 48,980 4,909 7,493 61,382\n7 75,873 50,375 6,271 12,449 69,095\n8 75,873 52,080 7,690 17,781 77,551\n9 75,873 53,785 9,168 19,547 82,500\n10 75,873 56,420 10,705 21,550 88,675\n11 75,873 58,590 12,303 24,081 94,974\n12 75,873 60,450 13,963 26,948 101,361\n13 75,873 62,620 15,688 30,284 108,592\n14 75,873 64,790 17,478 34,028 116,296\n15 75,873 67,115 19,336 38,262 124,713\n16 75,873 69,285 21,262 43,103 133,650\n17 75,873 71,455 23,259 48,443 143,157\n18 75,873 73,780 25,328 54,409 153,517\n19 75,873 75,950 27,471 61,487 164,908\n20 75,873 77,345 29,689 69,469 176,503\n25 75,873 81,375 41,984 125,625 248,984\n30 75,873 83,700 53,774 214,423 351,897\n@ANB 56歲 75,873 102,920 132,652 1,647,193 1,882,765\n@ANB 61歲 75,873 108,035 153,390 2,369,528 2,630,953\n@ANB 66歲 75,873 113,615 176,174 3,392,733 3,682,522\n@ANB 71歲 75,873 119,505 201,206 4,837,305 5,158,016\n@ANB 76歲 75,873 125,395 228,709 6,881,669 7,235,773\n@ANB 81歲 75,873 131,905 258,925 9,766,146 10,156,976\n@ANB 86歲 75,873 138,725 292,123 13,866,114 14,296,962\n@ANB 91歲 75,873 145,700 328,597 19,664,282 20,138,579\n@ANB 96歲 75,873 153,140 368,671 27,978,731 28,500,542\n@ANB 101歲 75,873 161,045 412,698 39,866,949 40,440,692",
+			"settings":
+			{
+				"buffer_size": 1316,
+				"line_ending": "Unix",
+				"name": "1 15,175 0 0 0 0"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"package con",
+				"Package Control: Remove Package"
+			],
+			[
+				"package control",
+				"Package Control: List Packages"
+			],
+			[
+				"pack",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/cyyuen/Projects/proposal-summary",
+		"/Users/cyyuen/Projects/proposal-summary/components"
+	],
+	"file_history":
+	[
+		"/Users/cyyuen/Projects/proposal-summary/components/PruProposalApp.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2AccSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/components/ProposalInputForm.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/pages/index.js",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2AccParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2WithdrawParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/MixedCCParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/PLCSParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/PLP2Parser.js",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/PruParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/SingleCCParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/components/ProposalRenderView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/parser/EGSP2AccParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/parser/EGSP2WithdrawParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/proposal-summary.sublime-project",
+		"/Users/cyyuen/Projects/proposal-summary/parser/PruParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/package.json",
+		"/Users/cyyuen/Documents/Google Drive/Insurance Consulting/Proposal/Pru Proposal Helper/proposalGenerator.html",
+		"/Users/cyyuen/Projects/wx-robot-js/run.js",
+		"/Users/cyyuen/Projects/wx-robot-js/msg.config.json",
+		"/Users/cyyuen/Projects/wx-robot-js/padchatx.js",
+		"/Users/cyyuen/Projects/wx-robot-js/save-user-config.sh",
+		"/Users/cyyuen/Projects/wx-robot-js/install-user-config.sh",
+		"/Users/cyyuen/Documents/Google Drive/Insurance Consulting/Proposal/Pru Proposal Helper/pruOnlineFillingHelper.js",
+		"/Users/cyyuen/Projects/wx-robot-js/unfriends.db.json",
+		"/Users/cyyuen/Projects/wx-robot-js/grep-node.sh",
+		"/Users/cyyuen/Projects/wx-robot-js/monitor.sh",
+		"/Users/cyyuen/Projects/wx-robot-js/run.sh",
+		"/Users/cyyuen/Projects/wx-robot-js/user.db.json",
+		"/Users/cyyuen/Projects/wxlogs/app.2018-08-08.log",
+		"/Users/cyyuen/Projects/wx-robot-js/alluser",
+		"/Users/cyyuen/Projects/wx-robot-js/util.js",
+		"/Users/cyyuen/Projects/wx-robot-js/test",
+		"/Users/cyyuen/Projects/wxlogs/app.2018-08-09.log",
+		"/Users/cyyuen/Projects/wx-robot-js/msg.config.20180811.json",
+		"/Users/cyyuen/Projects/wxlogs/app.log",
+		"/Users/cyyuen/Projects/wx-robot-js/db.json",
+		"/Users/cyyuen/Projects/wx-robot-js/install-node.sh",
+		"/Users/cyyuen/Projects/nohup.out",
+		"/Users/cyyuen/Projects/wx-robot-js/appmsg.json",
+		"/Users/cyyuen/Projects/wx-robot-js/logs/app.log",
+		"/Users/cyyuen/Projects/wx-robot-js/msg.json",
+		"/Users/cyyuen/Projects/wx-robot-js/demo.js",
+		"/Users/cyyuen/Projects/WXRobot/direct_send.py",
+		"/Users/cyyuen/Documents/Google Drive/Pru/Proposal/Pru Proposal Helper/proposalGenerator.html",
+		"/Users/cyyuen/Documents/Google Drive/Pru/Proposal/Pru Proposal Helper/pruOnlineFillingHelper.js",
+		"/Users/cyyuen/Documents/Google Drive/[Career]理财保险/Proposal/Pru Proposal Helper/pruOnlineFillingHelper.js",
+		"/Users/cyyuen/Documents/Google Drive/[Career]理财保险/Pru Proposal Helper/proposalGenerator.html",
+		"/Users/cyyuen/Documents/Google Drive/[Career]理财保险/Pru Proposal Helper/pruOnlineFillingHelper.js",
+		"/Users/cyyuen/Desktop/近况分享信.JPG",
+		"/Users/cyyuen/webdev_htdos/appeal/index.html",
+		"/Users/cyyuen/webdev_htdos/index.html",
+		"/Users/cyyuen/Downloads/Documents/微信公众平台_files/chat.html35e455.js",
+		"/Applications/MAMP/htdocs/index.html",
+		"/Users/cyyuen/Desktop/test.html"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+			"<current file>",
+			"<open files>",
+			"<open files>,/Users/cyyuen/Projects/proposal-summary",
+			"<open files>",
+			".",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"ProposalRenderView",
+			"render",
+			"Render",
+			"parser",
+			"Parser",
+			"export class",
+			"ProposalInputForm",
+			"PLP2Parser",
+			"EGSP2AccParser",
+			"numberToLocalString",
+			"dataNumStringToNumber",
+			"extractAgeAndYear",
+			"SingleCCParser"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"ProposalSummaryView",
+			"summary_view",
+			"SummaryView",
+			"render",
+			"Render",
+			"export default class",
+			"ProposalRenderView",
+			"PLCSParser",
+			"PLP2Parser",
+			"this.numberToLocalString",
+			"this.dataNumStringToNumber",
+			"MixedCCParser"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "components/ProposalSummaryView.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2331,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2076,
+								2076
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Simple JSX/JSX.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 563.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "parsers/PruParser.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2383,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								745,
+								745
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 358.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1316
+							]
+						],
+						"settings":
+						{
+							"auto_name": "1 15,175 0 0 0 0",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "proposal-summary.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 603.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 251.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -35,6 +35,18 @@ class ProposalInputForm extends React.Component {
 			<div>
 			<Form layout="horizontal" onSubmit={this.handleSubmit}>
 				<Form.Item
+		          label="计划名称"
+		          {...formItemLayout}
+		        >
+
+		          {getFieldDecorator('proposalName', { initialValue: "完美的计划" })(
+		            <Input />
+		          )}
+		          
+	        	</Form.Item>
+
+
+				<Form.Item
 		          label="ANB"
 		          {...formItemLayout}
 		        >
@@ -46,7 +58,7 @@ class ProposalInputForm extends React.Component {
 	        	</Form.Item>
 
 				<Form.Item
-		          label="FX Rate"
+		          label="汇率"
 		          {...formItemLayout}
 		        >
 
@@ -57,40 +69,60 @@ class ProposalInputForm extends React.Component {
 	        	</Form.Item>
 
 	        	<Form.Item
-		          label="Plan"
+		          label="货币单位"
+		          hasFeedback
+		          {...formItemLayout}
+		        >
+		          {getFieldDecorator('currency', {
+		          	initialValue: "美金",
+		            rules: [
+		              { required: true, message: 'Please currency!'}
+		            ],
+		          })(
+		            <Select>
+		              <Option value="美金">美金</Option>
+		              <Option value="港币">港币</Option>
+		              <Option value="人民币">人民币</Option>
+		            </Select>
+		          )}
+		        </Form.Item>
+
+	        	<Form.Item
+		          label="计划类别"
 		          hasFeedback
 		          {...formItemLayout}
 		        >
 		          {getFieldDecorator('planSelect', {
+		          	initialValue: "egsp2-acc",
 		            rules: [
-		              { required: true, message: 'Please select your plan!' }
+		              { required: true, message: 'Please select your plan!'}
 		            ],
 		          })(
 		            <Select placeholder="Please select a plan">
 		              <Option value="egsp2">EGSP2</Option>
-		              <Option value="egsp2-acc">EGSP2 Accumulate</Option>
+		              <Option value="egsp2-acc">EGSP2 整取方案</Option>
 		              <Option value="plcs">PLCS</Option>
 		              <Option value="plp2">PLP2</Option>
-		              <Option value="cc">CC</Option>
+		              <Option value="cc"> CIR2/CIE/CIM2/混合方案 </Option>
 		            </Select>
 		          )}
 		        </Form.Item>
 
 				<Form.Item
-		          label="plan1"
+		          label="计划1数据"
 		          {...formItemLayout}
 		        >
 		       	  {getFieldDecorator('plan1', {
 		            rules: [
-		              { required: true, message: 'Plan 1' }
+		              { required: true, message: '计划1数据' }
 		            ],
 		          })(
-		        	<TextArea rows={5} placeholder="Proposal details data for Single Proposal / CC plan 1 / PLP plan assured data"/>
+		        	<TextArea rows={5} placeholder="计划1数据。填写EGSP2, PLCS, 单个CC计划 | 混合CC计划的计划1数据 | PLP2 的保额部分数据"/>
 		          )}
 		        </Form.Item>
 				
 				<Form.Item
-		          label="plan2"
+		          label="计划2数据"
 		          {...formItemLayout}
 		        >
 		        	{getFieldDecorator('plan2', {
@@ -98,7 +130,7 @@ class ProposalInputForm extends React.Component {
 		              { required: false, message: 'Plan 2' }
 		            ],
 		          })(
-		    		<TextArea rows={5} placeholder="Proposal details data for CC plan 2 / PLP plan cash value data"/>
+		    		<TextArea rows={5} placeholder="混合CC计划的计划2数据 | PLP2 的退保价值部分数据"/>
 		        	)}
 		        </Form.Item>
 

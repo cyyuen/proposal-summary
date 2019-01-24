@@ -29,6 +29,8 @@ export default class ProposalSummaryView extends React.Component {
 			ANB,
 			planSelect,
 			fxRate,
+			proposalName,
+			currency,
 			plan1,
 			plan2,
 		} = this.props.proposalData;
@@ -81,7 +83,18 @@ export default class ProposalSummaryView extends React.Component {
 			}
 		}
 
-		return React.createElement(view, parser.parse());
+		let props = parser.parse();
+
+		Object.assign(props, {
+			display: {
+				proposalName,
+				fxRate,
+				currency,
+				ANB
+			}
+		});
+
+		return React.createElement(view, props);
 	}
 }
 

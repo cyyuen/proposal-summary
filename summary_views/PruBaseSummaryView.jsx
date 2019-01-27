@@ -106,11 +106,12 @@ export default class PruBaseSummaryView extends React.Component {
 				{...display}
 				{...summary}
 			>	
-				<Divider style={{marginTop: "-10px"}} /> 
 				<div style={{padding: "0px 23px 0px 23px"}}>
 					{this.renderHighlight()}
 				</div>
-				<Divider orientation="left" style={{marginTop: "-35px"}}> 方案关键年份数据 </Divider> 
+				
+				
+
 				<div style={{padding: "0px 23px 40px 23px"}}>
 					<Table 
 						dataSource={this.getDetailTableDataSource()} 

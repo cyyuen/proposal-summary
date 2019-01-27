@@ -13,21 +13,22 @@ import {
 
 export default class EGSP2AccSummaryView extends PruBaseSummaryView {
 
+	renderHighlight() {
+		
+	}
+
 	getDetailTableColumns() {
 		const columns = [{
-			  title: 'ANB',
+			  title: '翌年岁ANB',
 			  dataIndex: 'ANB',
 			  key: 'ANB',
 			}, {
-			  title: '累计保费',
-			  dataIndex: 'accumulatePremiun',
-			  key: 'accumulatePremiun',
-			  render: number => { return this.toCurrencyFormat(number) }
-			}, {
-			  title: '退保价值',
+			  title: '账户预期现金价值',
 			  dataIndex: 'total',
 			  key: 'total',
-			  render: number => { return this.toCurrencyFormat(number) }
+			  render: (number, record) => {
+			  	return <div> {this.toCurrencyFormat(number)} <Tag color="blue">{"增长" + parseFloat(record.increase).toFixed(2)+"倍"}</Tag> </div>
+			  }
 		}];
 
 		return columns;
@@ -38,7 +39,9 @@ export default class EGSP2AccSummaryView extends PruBaseSummaryView {
 			details
 		} = this.props;
 
-		return pickKeyYearDetails(details);
+		const  { totalPremiun } = this.props.summary;
+
+		return pickKeyYearDetails(details, totalPremiun);
 	}
 
 	getProposalHighlights() {
@@ -73,7 +76,7 @@ export default class EGSP2AccSummaryView extends PruBaseSummaryView {
 			const highlightDetail = highlightDetails[i];
 
 			highlights.push(this.createHighlight(
-				<span>到ANB {highlightDetail.ANB}岁，增值到{this.toCurrencyFormat(highlightDetail.total)} <Tag color="blue">{parseFloat(highlightDetail.total/totalPremiun).toFixed(2)+"%"}</Tag> </span>
+				<span>到ANB {highlightDetail.ANB}岁，增值到{this.toCurrencyFormat(highlightDetail.total)}  </span>
 			))
 		}
 
@@ -81,11 +84,15 @@ export default class EGSP2AccSummaryView extends PruBaseSummaryView {
 	}
 }
 
-function pickKeyYearDetails(details) {
+function pickKeyYearDetails(details, totalPremiun) {
 
 	const year10 = details[9];
 	const year20 = details[19];
 	const year30 = details[21];
+
+	year10.increase = year10.total / totalPremiun;
+	year20.increase = year20.total / totalPremiun;
+	year30.increase = year30.total / totalPremiun;
 	
 	const keyYearDetails = [
 		year10,
@@ -96,11 +103,12 @@ function pickKeyYearDetails(details) {
 	for (let i = 0, len = details.length; i != len; ++i) {
 		switch (details[i].ANB) {
 			case 66:
-			case 76:
 			case 86:
-			case 96:
 			case 101:
 				if (details[i].ANB > year30.ANB) {
+
+					details[i].increase = details[i].total / totalPremiun;
+
 					keyYearDetails.push(details[i]);
 				};
 				break

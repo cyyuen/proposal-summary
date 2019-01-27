@@ -1,6 +1,11 @@
 import React from 'react';
 import SummaryCard from '../components/SummaryCard.jsx';
-import { Divider, Table, Timeline, Icon } from 'antd'
+import { Divider, Table, Timeline, Icon, Button } from 'antd'
+
+import domtoimage from 'dom-to-image';
+import { saveAs } from 'file-saver';
+
+const CARD_ID = "summary-card-id";
 
 export default class PruBaseSummaryView extends React.Component {
 
@@ -69,6 +74,25 @@ export default class PruBaseSummaryView extends React.Component {
 		return (number * fxRate).toLocaleString() + " " + currency;
 	}
 
+	downloadSummaryCard = () => {
+
+		var summary = document.getElementById(CARD_ID);
+
+		console.log(summary);
+
+		const {
+			proposalName
+		} = this.props.display;
+
+		domtoimage.toBlob(summary)
+    		.then(function (blob) {
+    			return saveAs(blob, proposalName + ".png");
+    		})
+    		.catch(function (error) {
+        		console.error('oops, something went wrong!', error);
+    		});
+	}
+
 	render() {
 		const {
 			display,
@@ -76,7 +100,9 @@ export default class PruBaseSummaryView extends React.Component {
 		} = this.props;
 
 		return (
+			<div>
 			<SummaryCard
+				cardID = {CARD_ID}
 				{...display}
 				{...summary}
 			>	
@@ -95,6 +121,8 @@ export default class PruBaseSummaryView extends React.Component {
 					/>
 				</div>
 			</SummaryCard>
+			<div style={{textAlign: "center", marginTop: "20px"}}><Button onClick={this.downloadSummaryCard}> Download Image </Button></div>
+			</div>
 		)
 	}
 }

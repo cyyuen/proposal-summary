@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"tot",
+				"totalPremiun"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"num",
+				"number"
+			],
+			[
+				"year",
+				"year30"
+			],
+			[
+				"tim",
+				"timelineItems"
+			],
+			[
+				"pro",
+				"props"
+			],
+			[
+				"key",
+				"keyYearDetails"
+			],
+			[
+				"yea",
+				"year10"
+			],
+			[
+				"pr",
+				"props"
+			],
+			[
+				"time",
+				"timelineItems"
+			],
+			[
+				"ren",
+				"render"
+			],
+			[
 				"marg",
 				"marginLeft"
 			],
@@ -26,10 +70,6 @@
 			[
 				"rend",
 				"renderContent"
-			],
-			[
-				"pro",
-				"proposalName"
 			],
 			[
 				"pa",
@@ -130,10 +170,6 @@
 			[
 				"pre",
 				"Premiun"
-			],
-			[
-				"tot",
-				"totalPaymentYear"
 			],
 			[
 				"ex",
@@ -268,10 +304,6 @@
 				"detail"
 			],
 			[
-				"time",
-				"timeToSleep"
-			],
-			[
 				"gener",
 				"generateCIRCIMSummary"
 			],
@@ -401,24 +433,27 @@
 	"expanded_folders":
 	[
 		"/Users/cyyuen/Projects/proposal-summary",
-		"/Users/cyyuen/Projects/proposal-summary/parsers",
+		"/Users/cyyuen/Projects/proposal-summary/static",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views"
 	],
 	"file_history":
 	[
-		"/Users/cyyuen/Projects/proposal-summary/test/egsp2-acc.input",
+		"/Users/cyyuen/Documents/Google Drive/Insurance Consulting/Proposal/Pru Proposal Helper/proposalGenerator.html",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruBaseSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/components/SummaryCard.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2AccSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/components/KeyDetailsTable.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/components/SummaryCard.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/test/egsp2-acc.input",
 		"/Users/cyyuen/Projects/proposal-summary/components/ProposalSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/components/ProposalInputForm.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/app/constants.js",
-		"/Users/cyyuen/Projects/proposal-summary/summary_views/components/SummaryCard.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/components/PruProposalApp.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/PruParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/SingleCCParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2WithdrawParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/MixedCCParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/constants.js",
+		"/Users/cyyuen/Projects/proposal-summary/components/KeyDetailsTable.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/components/ProposalInputForm.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/app/constants.js",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/components/SummaryCard.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/test/cir2.input",
 		"/Users/cyyuen/Projects/proposal-summary/test/plp2.input",
 		"/Users/cyyuen/Projects/proposal-summary/test/plcs.input",
@@ -429,7 +464,6 @@
 		"/Users/cyyuen/Projects/proposal-summary/tests/egsp2.input",
 		"/Users/cyyuen/Projects/proposal-summary/pages/index.js",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2AccParser.js",
-		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2WithdrawParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/PLCSParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/components/ProposalRenderView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parser/EGSP2AccParser.js",
@@ -437,7 +471,6 @@
 		"/Users/cyyuen/Projects/proposal-summary/proposal-summary.sublime-project",
 		"/Users/cyyuen/Projects/proposal-summary/parser/PruParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/package.json",
-		"/Users/cyyuen/Documents/Google Drive/Insurance Consulting/Proposal/Pru Proposal Helper/proposalGenerator.html",
 		"/Users/cyyuen/Projects/wx-robot-js/run.js",
 		"/Users/cyyuen/Projects/wx-robot-js/msg.config.json",
 		"/Users/cyyuen/Projects/wx-robot-js/padchatx.js",
@@ -498,6 +531,16 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"pickKeyYearDetails",
+			"cardID",
+			"CARD_ID",
+			"domtoimage",
+			"downloadAll",
+			"this.year20",
+			"details",
+			"this.details",
+			"const",
+			"renderHighlight",
 			"defaultValue",
 			"A",
 			"Accumulate",

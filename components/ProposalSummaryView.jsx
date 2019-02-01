@@ -15,6 +15,10 @@ import PLCSSummaryView from '../summary_views/PLCSSummaryView.jsx'
 import PLP2SummaryView from '../summary_views/PLP2SummaryView.jsx'
 import SingleCCSummaryView from '../summary_views/SingleCCSummaryView.jsx'
 
+import CIR2SummaryView from '../summary_views/CIR2SummaryView.jsx'
+import CIESummaryView from '../summary_views/CIESummaryView.jsx'
+import CIM2SummaryView from '../summary_views/CIM2SummaryView.jsx'
+
 const { TextArea } = Input;
 
 export default class ProposalSummaryView extends React.Component {
@@ -67,15 +71,34 @@ export default class ProposalSummaryView extends React.Component {
 				view = PLP2SummaryView;
 				break;
 			};
-			case "cc": {
-				if (plan2Data) {
-					parser = new MixedCCParser(ANB, plan1Data, plan2Data);
-					view = MixedCCSummaryView;
-				} else {
-					parser = new SingleCCParser(ANB, plan1Data);
-					view = SingleCCSummaryView;
-				}
+			case "cir2": {
+				parser = new SingleCCParser(ANB, plan1Data);
+				view = CIR2SummaryView;
 				
+				break;
+			};
+			case "cie": {
+				parser = new SingleCCParser(ANB, plan1Data);
+				view = CIESummaryView;
+
+				break;
+			};
+			case "cim2": {
+				parser = new SingleCCParser(ANB, plan1Data);
+				view = CIM2SummaryView;
+				
+				break;
+			};
+			case "cie+cim2": {
+				parser = new MixedCCParser(ANB, plan1Data, plan2Data);
+				view = CIExCIM2SummaryView;
+				
+				break;
+			};
+			case "cir2+cie": {
+				parser = new MixedCCParser(ANB, plan1Data, plan2Data);
+				view = CIR2xCIESummaryView;
+
 				break;
 			};
 			default: {

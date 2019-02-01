@@ -14,18 +14,27 @@ import {
 export default class EGSP2AccSummaryView extends PruBaseSummaryView {
 
 	renderHighlight() {
-		
+
 	}
 
 	getDetailTableColumns() {
 		const columns = [{
-			  title: '翌年岁ANB',
+			  title: '年期/岁数',
 			  dataIndex: 'ANB',
 			  key: 'ANB',
-			}, {
+			  align: "center",
+			  render: (number, record) => {
+			  	if (record.year === -1) {
+			  		return number + "岁";
+			  	}
+
+			  	return record.year + "年/" + number + "岁"
+			  }
+		}, {
 			  title: '账户预期现金价值',
 			  dataIndex: 'total',
 			  key: 'total',
+			  align: "center",
 			  render: (number, record) => {
 			  	return <div> {this.toCurrencyFormat(number)} <Tag color="blue">{"增长" + parseFloat(record.increase).toFixed(2)+"倍"}</Tag> </div>
 			  }

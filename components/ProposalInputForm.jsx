@@ -103,7 +103,12 @@ class ProposalInputForm extends React.Component {
 		              <Option value="egsp2-acc">EGSP2 整取方案</Option>
 		              <Option value="plcs">PLCS</Option>
 		              <Option value="plp2">PLP2</Option>
-		              <Option value="cc"> CIR2/CIE/CIM2/混合方案 </Option>
+		              <Option value="cir2"> CIR2 </Option>
+		              <Option value="cie"> CIE </Option>
+		              <Option value="cim2"> CIM2 </Option>
+		              <Option value="cir2+cie"> CIR2 & CIE混合方案 </Option>
+		              <Option value="cie+cim2"> CIE & CIM2混合方案 </Option>
+		              
 		            </Select>
 		          )}
 		        </Form.Item>

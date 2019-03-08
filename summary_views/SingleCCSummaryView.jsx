@@ -81,15 +81,19 @@ export default class SingleCCSummaryView extends PruBaseSummaryView {
 
 		const  { totalPremiun } = this.props.summary;
 
+		const year1 = details[0];
 		const year11 = details[10];
 		const year20 = details[19];
 		const year25 = details[20];
 
+
+		attachGearing(year1);
 		attachGearing(year11);
 		attachGearing(year20);
 		attachGearing(year25);
 
 		const keyYearDetails = [
+			year1,
 			year11,
 			year20,
 			year25

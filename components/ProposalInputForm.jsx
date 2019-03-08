@@ -104,7 +104,7 @@ class ProposalInputForm extends React.Component {
 		              <Option value="cir2"> CIR2 </Option>
 		              <Option value="cie"> CIE </Option>
 		              <Option value="cim2"> CIM2 </Option>
-		              
+
 		              <Option value="cir2+cie"> CIR2 & CIE混合方案 (In progress) </Option>
 		              <Option value="cie+cim2"> CIE & CIM2混合方案 (In progress) </Option>
 		              <Option value="egsp2">EGSP2 (In progress)</Option>
@@ -153,7 +153,7 @@ class ProposalInputForm extends React.Component {
 		              { required: true, message: '计划1数据' }
 		            ],
 		          })(
-		        	<TextArea rows={5} placeholder="计划1数据。填写EGSP2, PLCS, 单个CC计划 | 混合CC计划的计划1数据 | PLP2 的退保价值部分数据"/>
+		        	<TextArea rows={5} placeholder="填写EGSP2, PLCS, 单个CC计划 | 混合CC计划的计划1数据 | PLP2 的退保价值部分数据"/>
 		          )}
 		        </Form.Item>
 				

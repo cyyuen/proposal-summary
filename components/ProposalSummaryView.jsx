@@ -37,6 +37,9 @@ export default class ProposalSummaryView extends React.Component {
 			currency,
 			plan1,
 			plan2,
+			ct2Assured,
+			ct2Premiun,
+			ct2PaymentPeriod
 		} = this.props.proposalData;
 
 		const plan1Data = inputStringToData(plan1);
@@ -67,7 +70,7 @@ export default class ProposalSummaryView extends React.Component {
 				break;
 			};
 			case "plp2": {
-				parser = new PLP2Parser(ANB, plan1Data, plan2Data);
+				parser = new PLP2Parser(ANB, plan1Data, plan2Data, ct2Assured, ct2Premiun, ct2PaymentPeriod);
 				view = PLP2SummaryView;
 				break;
 			};

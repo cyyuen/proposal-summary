@@ -113,6 +113,36 @@ class ProposalInputForm extends React.Component {
 		          )}
 		        </Form.Item>
 
+		        <Form.Item
+		          label="CT2保额"
+		          {...formItemLayout}
+		        >
+
+		          {getFieldDecorator('ct2Assured', { initialValue: 0 })(
+		            <InputNumber />
+		          )}
+	        	
+	        	</Form.Item>
+	        	<Form.Item
+		          label="CT2保费"
+		          {...formItemLayout}
+		        >
+
+		          {getFieldDecorator('ct2Premiun', { initialValue: 0 })(
+		            <InputNumber />
+		          )}
+	        	
+	        	</Form.Item>
+	        	<Form.Item
+		          label="CT2保障年份"
+		          {...formItemLayout}
+		        >
+
+		          {getFieldDecorator('ct2PaymentPeriod', { initialValue: 0 })(
+		            <InputNumber />
+		          )}
+	        	
+	        	</Form.Item>
 				<Form.Item
 		          label="计划1数据"
 		          {...formItemLayout}
@@ -122,7 +152,7 @@ class ProposalInputForm extends React.Component {
 		              { required: true, message: '计划1数据' }
 		            ],
 		          })(
-		        	<TextArea rows={5} placeholder="计划1数据。填写EGSP2, PLCS, 单个CC计划 | 混合CC计划的计划1数据 | PLP2 的保额部分数据"/>
+		        	<TextArea rows={5} placeholder="计划1数据。填写EGSP2, PLCS, 单个CC计划 | 混合CC计划的计划1数据 | PLP2 的退保价值部分数据"/>
 		          )}
 		        </Form.Item>
 				
@@ -135,7 +165,7 @@ class ProposalInputForm extends React.Component {
 		              { required: false, message: 'Plan 2' }
 		            ],
 		          })(
-		    		<TextArea rows={5} placeholder="混合CC计划的计划2数据 | PLP2 的退保价值部分数据"/>
+		    		<TextArea rows={5} placeholder="混合CC计划的计划2数据 | PLP2 的保额部分数据"/>
 		        	)}
 		        </Form.Item>
 

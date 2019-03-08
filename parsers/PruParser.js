@@ -55,7 +55,7 @@ export default class PruParser {
 				lastParsedDataline = parsedDetails[i-1];
 
 				if (accumulatePremiun > accumulatePremiunLastYear) {
-					totalPaymentYear = parseInt(this.data[i][0]);
+					totalPaymentYear = ANBandYear.year;
 					totalPremiun = accumulatePremiun;	
 				}
 			}
@@ -117,7 +117,7 @@ export default class PruParser {
 
 			return {
 				ANB: ANB,
-				year: -1
+				year: ANB - this.ANB
 			}
 		}
 
@@ -125,7 +125,7 @@ export default class PruParser {
 		parsing format {year}
 		*/
 		return {
-			ANB: this.ANB + parseInt(data[0]) - 1,
+			ANB: this.ANB + parseInt(data[0]),
 			year: parseInt(data[0])
 		}
 	}

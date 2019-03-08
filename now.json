@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "nextjs",
+    "name": "proposal-summary",
     "builds": [
         { "src": "package.json", "use": "@now/static-build" }
     ]

@@ -99,15 +99,16 @@ class ProposalInputForm extends React.Component {
 		            ],
 		          })(
 		            <Select placeholder="Please select a plan">
-		              <Option value="egsp2">EGSP2 (In progress)</Option>
 		              <Option value="egsp2-acc">EGSP2 整取方案</Option>
-		              <Option value="plcs">PLCS (In progress)</Option>
 		              <Option value="plp2">PLP2</Option>
 		              <Option value="cir2"> CIR2 </Option>
 		              <Option value="cie"> CIE </Option>
 		              <Option value="cim2"> CIM2 </Option>
+		              
 		              <Option value="cir2+cie"> CIR2 & CIE混合方案 (In progress) </Option>
 		              <Option value="cie+cim2"> CIE & CIM2混合方案 (In progress) </Option>
+		              <Option value="egsp2">EGSP2 (In progress)</Option>
+		              <Option value="plcs">PLCS (In progress)</Option>
 		              
 		            </Select>
 		          )}

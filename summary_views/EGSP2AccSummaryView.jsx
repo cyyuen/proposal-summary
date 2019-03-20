@@ -6,6 +6,10 @@ import {
 } from 'antd'
 
 import {
+	displayAgeYearString
+} from './utils.js'
+
+import {
 	INSURANCE_ICON,
 	DOLLAR_ICON,
 	CLUSTER_ICON
@@ -23,12 +27,8 @@ export default class EGSP2AccSummaryView extends PruBaseSummaryView {
 			  dataIndex: 'ANB',
 			  key: 'ANB',
 			  align: "center",
-			  render: (number, record) => {
-			  	if (record.year === -1) {
-			  		return number + "岁";
-			  	}
-
-			  	return record.year + "年/" + number + "岁"
+			  render: (age, record) => {
+			  	return displayAgeYearString(age, record.year);
 			  }
 		}, {
 			  title: '账户预期现金价值',

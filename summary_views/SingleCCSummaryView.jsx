@@ -2,6 +2,10 @@ import React from 'react';
 import PruBaseSummaryView from './PruBaseSummaryView.jsx'
 
 import {
+	displayAgeYearString
+} from './utils.js'
+
+import {
 	Tag,
 	Avatar,
 	Row,
@@ -46,12 +50,8 @@ export default class SingleCCSummaryView extends PruBaseSummaryView {
 			  dataIndex: 'ANB',
 			  key: 'ANB',
 			  align: "center",
-			  render: (number, record) => {
-			  	if (record.year === -1) {
-			  		return number + "岁";
-			  	}
-
-			  	return record.year + "年/" + number + "岁"
+			  render: (age, record) => {
+			  	return displayAgeYearString(age, record.year);
 			  }
 		}, {
 			  title: '保障金额(有事赔钱)',

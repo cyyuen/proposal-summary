@@ -54,7 +54,10 @@ export default class PruParser {
 
 				lastParsedDataline = parsedDetails[i-1];
 
-				if (accumulatePremiun > accumulatePremiunLastYear) {
+				/**
+					<IMPORTANT> the total payment year must be listed within the year-only column
+				*/
+				if (accumulatePremiun > accumulatePremiunLastYear && ANBandYear.isYearOnlyColumn ) {
 					totalPaymentYear = ANBandYear.year;
 					totalPremiun = accumulatePremiun;	
 				}
@@ -117,7 +120,8 @@ export default class PruParser {
 
 			return {
 				ANB: ANB,
-				year: ANB - this.ANB
+				year: ANB - this.ANB,
+				isYearOnlyColumn: false
 			}
 		}
 
@@ -126,7 +130,8 @@ export default class PruParser {
 		*/
 		return {
 			ANB: this.ANB + parseInt(data[0]),
-			year: parseInt(data[0])
+			year: parseInt(data[0]),
+			isYearOnlyColumn: true
 		}
 	}
 }

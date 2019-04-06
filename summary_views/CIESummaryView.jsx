@@ -7,7 +7,7 @@ export default class CIESummaryView extends SingleCCSummaryView {
 	}
 
 	getDiseaseNum() {
-		return 108;
+		return 118;
 	}
 
 	getClaimNum() {

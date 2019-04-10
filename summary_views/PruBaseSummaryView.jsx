@@ -93,6 +93,20 @@ export default class PruBaseSummaryView extends React.Component {
     		});
 	}
 
+	renderDetails() {
+		return (
+			
+					<Table 
+						dataSource={this.getDetailTableDataSource()} 
+						columns={this.getDetailTableColumns()}
+						size="middle"
+						bordered
+						pagination={false}
+					/>
+				
+		)
+	}
+
 	render() {
 		const {
 			display,
@@ -110,17 +124,10 @@ export default class PruBaseSummaryView extends React.Component {
 					{this.renderHighlight()}
 				</div>
 				
-				
-
 				<div style={{padding: "0px 23px 40px 23px"}}>
-					<Table 
-						dataSource={this.getDetailTableDataSource()} 
-						columns={this.getDetailTableColumns()}
-						size="middle"
-						bordered
-						pagination={false}
-					/>
+					{this.renderDetails()}
 				</div>
+
 			</SummaryCard>
 			<div style={{textAlign: "center", marginTop: "20px"}}><Button onClick={this.downloadSummaryCard}> Download Image </Button></div>
 			</div>

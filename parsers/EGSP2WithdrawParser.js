@@ -7,6 +7,17 @@ export default class EGSP2WithdrawParser extends PruParser {
 		this.lastTotalWithdraw = 0;
 	}
 
+	parse() {
+		let parsedData = super.parse();
+
+		Object.assign(parsedData.summary, {
+			totalWithdraw: this.lastTotalWithdraw,
+			totalValue: parsedData.details[parsedData.details.length - 1].total,
+		});
+
+		return parsedData;
+	}
+
 	parseDataLine(ANB, year, accumulatePremiun, dataline) {
 
 		const withdrawValue = this.dataNumStringToNumber(dataline[4]);

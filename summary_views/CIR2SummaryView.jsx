@@ -1,5 +1,5 @@
 
-import SingleCCSummaryView from './SingleCCSummaryView'
+import PruCCSummaryView from './PruCCSummaryView'
 import {
 	Tag,
 	Timeline,
@@ -12,7 +12,7 @@ import {
 	Divider
 } from 'antd'
 
-export default class CIR2SummaryView extends SingleCCSummaryView {
+export default class CIR2SummaryView extends PruCCSummaryView {
 
 	renderHighlight() {
 

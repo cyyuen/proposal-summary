@@ -1,7 +1,7 @@
 
-import SingleCCSummaryView from './SingleCCSummaryView'
+import PruCCSummaryView from './PruCCSummaryView'
 
-export default class CIM2SummaryView extends SingleCCSummaryView {
+export default class CIM2SummaryView extends PruCCSummaryView {
 	getPlanname() {
 		return "CIM2"
 	}

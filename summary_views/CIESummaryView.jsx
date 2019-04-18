@@ -1,4 +1,4 @@
-import SingleCCSummaryView from './SingleCCSummaryView'
+import PruCCSummaryView from './PruCCSummaryView'
 import {
 	Tag,
 	Timeline,
@@ -11,7 +11,7 @@ import {
 	Divider
 } from 'antd'
 
-export default class CIESummaryView extends SingleCCSummaryView {
+export default class CIESummaryView extends PruCCSummaryView {
 
 	renderHighlight() {
 

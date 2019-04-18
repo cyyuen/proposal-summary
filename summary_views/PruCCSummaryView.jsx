@@ -12,7 +12,7 @@ import {
 	Col
 } from 'antd'
 
-export default class SingleCCSummaryView extends PruBaseSummaryView {
+export default class PruCCSummaryView extends PruBaseSummaryView {
 
 	/**
 	@override

@@ -10,10 +10,9 @@ import SingleCCParser from '../parsers/SingleCCParser.js'
 
 import EGSP2AccSummaryView from '../summary_views/EGSP2AccSummaryView.jsx'
 import EGSP2WithdrawSummaryView from '../summary_views/EGSP2WithdrawSummaryView.jsx'
-import MixedCCSummaryView from '../summary_views/MixedCCSummaryView.jsx'
 import PLCSSummaryView from '../summary_views/PLCSSummaryView.jsx'
 import PLP2SummaryView from '../summary_views/PLP2SummaryView.jsx'
-import SingleCCSummaryView from '../summary_views/SingleCCSummaryView.jsx'
+import PruCCSummaryView from '../summary_views/PruCCSummaryView.jsx'
 
 import CIR2SummaryView from '../summary_views/CIR2SummaryView.jsx'
 import CIESummaryView from '../summary_views/CIESummaryView.jsx'

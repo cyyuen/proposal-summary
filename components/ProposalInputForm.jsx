@@ -106,7 +106,7 @@ class ProposalInputForm extends React.Component {
 		              <Option value="cie"> CIE </Option>
 		              <Option value="cim2"> CIM2 </Option>
 
-		              <Option value="cir2+cie"> CIR2 & CIE混合方案 (In progress) </Option>
+		              <Option value="cir2+cie"> CIR2 & CIE混合方案</Option>
 		              <Option value="cie+cim2"> CIE & CIM2混合方案 (In progress) </Option>
 		              <Option value="plcs">PLCS (In progress)</Option>
 		              

@@ -18,6 +18,9 @@ import CIR2SummaryView from '../summary_views/CIR2SummaryView.jsx'
 import CIESummaryView from '../summary_views/CIESummaryView.jsx'
 import CIM2SummaryView from '../summary_views/CIM2SummaryView.jsx'
 
+import CIExCIM2SummaryView from '../summary_views/CIExCIM2SummaryView.jsx'
+import CIR2xCIESummaryView from '../summary_views/CIR2xCIESummaryView.jsx'
+
 const { TextArea } = Input;
 
 export default class ProposalSummaryView extends React.Component {

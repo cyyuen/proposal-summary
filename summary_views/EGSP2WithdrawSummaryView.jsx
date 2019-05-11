@@ -64,7 +64,7 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 		}
 
 		if(index !== details.length) {
-			timeslots.push(this.fetchEndingTimeslot(timeslots, index, details));
+			// timeslots.push(this.fetchEndingTimeslot(timeslots, index, details));
 		}
 	
 		return timeslots;
@@ -287,12 +287,73 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 			</div>
 	}
 
+	renderSummaryDetails() {
+		const {
+			details
+		} = this.props;
+
+		const highlights = [details[0]];
+	
+		for (var i = 0, len = details.length; i < len; i++) {
+
+			console.log(details[i]);
+
+			if ((details[i].ANB - 1) % 20 === 0) {
+				highlights.push(details[i]);
+			}
+		}
+
+		return (
+			<Table 
+						dataSource={highlights} 
+						columns={[{
+								  title: '年期/岁数',
+								  dataIndex: 'ANB',
+								  key: 'ANB',
+								  align: "center",
+								  render: (age, record) => {
+								  	return displayAgeYearString(age, record.year);
+								  }
+							}, {
+								  title: '累计提取',
+								  dataIndex: 'totalWithdraw',
+								  key: 'totalWithdraw',
+								  align: "center",
+								  render: (number, record) => {
+								  	return <div> {this.toCurrencyFormat(number)}</div>
+								  }
+							}, {
+								  title: '账户现金价值',
+								  dataIndex: 'remainingValue',
+								  key: 'remainingValue',
+								  align: "center",
+								  render: (number, record) => {
+								  	return <div> {this.toCurrencyFormat(number)}</div>
+								  }
+							}, {
+								  title: '合计',
+								  dataIndex: 'total',
+								  key: 'total',
+								  align: "center",
+								  render: (number, record) => {
+								  	return <div> {this.toCurrencyFormat(number)}  </div>
+								  }
+							}
+						]}
+						size="middle"
+						bordered
+						pagination={false}
+					/>
+		)
+	}
+
 	renderDetails() {
 		return (
 			<div style={{"margin-top": "30px"}}>
 				<div>{this.renderTimelineSummary()}</div>
 				<Divider orientation="left">具体数据</Divider>
 				<div>{this.renderTimeline()}</div>
+				<div>{this.renderSummaryDetails()}</div>
 			</div>
 		)
 	}

@@ -41,7 +41,8 @@ export default class ProposalSummaryView extends React.Component {
 			plan2,
 			ct2Assured,
 			ct2Premiun,
-			ct2PaymentPeriod
+			ct2PaymentPeriod,
+			fullDataDisplay
 		} = this.props.proposalData;
 
 		const plan1Data = inputStringToData(plan1);
@@ -118,7 +119,8 @@ export default class ProposalSummaryView extends React.Component {
 				proposalName,
 				fxRate,
 				currency,
-				ANB
+				ANB,
+				fullDataDisplay
 			}
 		});
 

@@ -10,7 +10,8 @@ export default class EGSP2AccParser extends PruParser {
 			ANB: ANB,
 			year: year,
 			accumulatePremiun: accumulatePremiun,
-			total: total
+			total: total,
+			increase: total / accumulatePremiun
 		}
 	}
 }

@@ -1,4 +1,11 @@
-import { Input, Form, InputNumber, Select, Button } from 'antd';
+import { 
+	Input, 
+	Form, 
+	InputNumber, 
+	Select, 
+	Button, 
+	Checkbox 
+} from 'antd';
 import { Row, Col } from 'antd';
 import React from 'react';
 
@@ -113,6 +120,17 @@ class ProposalInputForm extends React.Component {
 		            </Select>
 		          )}
 		        </Form.Item>
+		        
+		        <Form.Item
+		          label="显示每年数据"
+		          {...formItemLayout}
+		        >
+
+		          {getFieldDecorator('fullDataDisplay', { initialValue: false })(
+		            <Checkbox />
+		          )}
+	        	
+	        	</Form.Item>
 
 		        <Form.Item
 		          label="CT2保额"
@@ -124,6 +142,7 @@ class ProposalInputForm extends React.Component {
 		          )}
 	        	
 	        	</Form.Item>
+
 	        	<Form.Item
 		          label="CT2保费"
 		          {...formItemLayout}

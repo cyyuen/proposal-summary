@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"div",
+				"Divider"
+			],
+			[
+				"time",
+				"timeslotItem"
+			],
+			[
+				"ne",
+				"nextTimeslot"
+			],
+			[
+				"tim",
+				"timeslots"
+			],
+			[
+				"ren",
+				"renderTimeslot"
+			],
+			[
+				"render",
+				"renderDetails"
+			],
+			[
 				"pru",
 				"premuin"
 			],
@@ -44,10 +68,6 @@
 				"number"
 			],
 			[
-				"tim",
-				"timelineItems"
-			],
-			[
 				"pro",
 				"props"
 			],
@@ -58,14 +78,6 @@
 			[
 				"pr",
 				"props"
-			],
-			[
-				"time",
-				"timelineItems"
-			],
-			[
-				"ren",
-				"render"
 			],
 			[
 				"marg",
@@ -391,86 +403,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "components/ProposalSummaryView.jsx",
-			"settings":
-			{
-				"buffer_size": 3130,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "parsers/PLP2Parser.js",
-			"settings":
-			{
-				"buffer_size": 2181,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "parsers/PruParser.js",
-			"settings":
-			{
-				"buffer_size": 2531,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/PLP2Assured",
-			"settings":
-			{
-				"buffer_size": 2183,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/PLP2CashValue",
-			"settings":
-			{
-				"buffer_size": 1439,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "{\n  \"cashValueData\": {\n    \"summary\": {\n      \"totalPaymentYear\": 61,\n      \"premiun\": 1630,\n      \"totalPremiun\": 48900\n    },\n    \"details\": [\n      {\n        \"ANB\": 1,\n        \"year\": 1,\n        \"cashValue\": 0\n      },\n      {\n        \"ANB\": 2,\n        \"year\": 2,\n        \"cashValue\": 0\n      },\n      {\n        \"ANB\": 3,\n        \"year\": 3,\n        \"cashValue\": 1279\n      },\n      {\n        \"ANB\": 4,\n        \"year\": 4,\n        \"cashValue\": 2383\n      },\n      {\n        \"ANB\": 5,\n        \"year\": 5,\n        \"cashValue\": 3670\n      },\n      {\n        \"ANB\": 6,\n        \"year\": 6,\n        \"cashValue\": 5130\n      },\n      {\n        \"ANB\": 7,\n        \"year\": 7,\n        \"cashValue\": 6753\n      },\n      {\n        \"ANB\": 8,\n        \"year\": 8,\n        \"cashValue\": 8641\n      },\n      {\n        \"ANB\": 9,\n        \"year\": 9,\n        \"cashValue\": 10746\n      },\n      {\n        \"ANB\": 10,\n        \"year\": 10,\n        \"cashValue\": 13081\n      },\n      {\n        \"ANB\": 11,\n        \"year\": 11,\n        \"cashValue\": 15349\n      },\n      {\n        \"ANB\": 12,\n        \"year\": 12,\n        \"cashValue\": 17629\n      },\n      {\n        \"ANB\": 13,\n        \"year\": 13,\n        \"cashValue\": 20050\n      },\n      {\n        \"ANB\": 14,\n        \"year\": 14,\n        \"cashValue\": 22644\n      },\n      {\n        \"ANB\": 15,\n        \"year\": 15,\n        \"cashValue\": 25396\n      },\n      {\n        \"ANB\": 16,\n        \"year\": 16,\n        \"cashValue\": 28616\n      },\n      {\n        \"ANB\": 17,\n        \"year\": 17,\n        \"cashValue\": 31762\n      },\n      {\n        \"ANB\": 18,\n        \"year\": 18,\n        \"cashValue\": 35083\n      },\n      {\n        \"ANB\": 19,\n        \"year\": 19,\n        \"cashValue\": 38612\n      },\n      {\n        \"ANB\": 20,\n        \"year\": 20,\n        \"cashValue\": 42415\n      },\n      {\n        \"ANB\": 21,\n        \"year\": 21,\n        \"cashValue\": 46945\n      },\n      {\n        \"ANB\": 22,\n        \"year\": 22,\n        \"cashValue\": 51851\n      },\n      {\n        \"ANB\": 23,\n        \"year\": 23,\n        \"cashValue\": 57128\n      },\n      {\n        \"ANB\": 24,\n        \"year\": 24,\n        \"cashValue\": 62217\n      },\n      {\n        \"ANB\": 25,\n        \"year\": 25,\n        \"cashValue\": 67685\n      },\n      {\n        \"ANB\": 26,\n        \"year\": 26,\n        \"cashValue\": 73561\n      },\n      {\n        \"ANB\": 27,\n        \"year\": 27,\n        \"cashValue\": 79829\n      },\n      {\n        \"ANB\": 28,\n        \"year\": 28,\n        \"cashValue\": 86601\n      },\n      {\n        \"ANB\": 29,\n        \"year\": 29,\n        \"cashValue\": 93706\n      },\n      {\n        \"ANB\": 30,\n        \"year\": 30,\n        \"cashValue\": 100732\n      },\n      {\n        \"ANB\": 56,\n        \"year\": -1,\n        \"cashValue\": 67685\n      },\n      {\n        \"ANB\": 61,\n        \"year\": -1,\n        \"cashValue\": 100732\n      },\n      {\n        \"ANB\": 66,\n        \"year\": -1,\n        \"cashValue\": 136695\n      },\n      {\n        \"ANB\": 71,\n        \"year\": -1,\n        \"cashValue\": 179858\n      },\n      {\n        \"ANB\": 76,\n        \"year\": -1,\n        \"cashValue\": 236107\n      },\n      {\n        \"ANB\": 81,\n        \"year\": -1,\n        \"cashValue\": 306364\n      },\n      {\n        \"ANB\": 86,\n        \"year\": -1,\n        \"cashValue\": 388271\n      },\n      {\n        \"ANB\": 91,\n        \"year\": -1,\n        \"cashValue\": 481289\n      },\n      {\n        \"ANB\": 96,\n        \"year\": -1,\n        \"cashValue\": 594831\n      },\n      {\n        \"ANB\": 101,\n        \"year\": -1,\n        \"cashValue\": 742680\n      }\n    ]\n  },\n  \"assuredData\": {\n    \"summary\": {\n      \"totalPaymentYear\": 61,\n      \"premiun\": 1630,\n      \"totalPremiun\": 48900\n    },\n    \"details\": [\n      {\n        \"ANB\": 1,\n        \"year\": 1,\n        \"assured\": 200000\n      },\n      {\n        \"ANB\": 2,\n        \"year\": 2,\n        \"assured\": 200000\n      },\n      {\n        \"ANB\": 3,\n        \"year\": 3,\n        \"assured\": 201914\n      },\n      {\n        \"ANB\": 4,\n        \"year\": 4,\n        \"assured\": 203679\n      },\n      {\n        \"ANB\": 5,\n        \"year\": 5,\n        \"assured\": 205621\n      },\n      {\n        \"ANB\": 6,\n        \"year\": 6,\n        \"assured\": 207732\n      },\n      {\n        \"ANB\": 7,\n        \"year\": 7,\n        \"assured\": 210002\n      },\n      {\n        \"ANB\": 8,\n        \"year\": 8,\n        \"assured\": 212497\n      },\n      {\n        \"ANB\": 9,\n        \"year\": 9,\n        \"assured\": 215202\n      },\n      {\n        \"ANB\": 10,\n        \"year\": 10,\n        \"assured\": 218134\n      },\n      {\n        \"ANB\": 11,\n        \"year\": 11,\n        \"assured\": 220993\n      },\n      {\n        \"ANB\": 12,\n        \"year\": 12,\n        \"assured\": 223838\n      },\n      {\n        \"ANB\": 13,\n        \"year\": 13,\n        \"assured\": 226813\n      },\n      {\n        \"ANB\": 14,\n        \"year\": 14,\n        \"assured\": 229927\n      },\n      {\n        \"ANB\": 15,\n        \"year\": 15,\n        \"assured\": 233181\n      },\n      {\n        \"ANB\": 16,\n        \"year\": 16,\n        \"assured\": 236859\n      },\n      {\n        \"ANB\": 17,\n        \"year\": 17,\n        \"assured\": 240411\n      },\n      {\n        \"ANB\": 18,\n        \"year\": 18,\n        \"assured\": 244077\n      },\n      {\n        \"ANB\": 19,\n        \"year\": 19,\n        \"assured\": 247846\n      },\n      {\n        \"ANB\": 20,\n        \"year\": 20,\n        \"assured\": 251734\n      },\n      {\n        \"ANB\": 21,\n        \"year\": 21,\n        \"assured\": 246235\n      },\n      {\n        \"ANB\": 22,\n        \"year\": 22,\n        \"assured\": 240987\n      },\n      {\n        \"ANB\": 23,\n        \"year\": 23,\n        \"assured\": 235970\n      },\n      {\n        \"ANB\": 24,\n        \"year\": 24,\n        \"assured\": 230611\n      },\n      {\n        \"ANB\": 25,\n        \"year\": 25,\n        \"assured\": 225455\n      },\n      {\n        \"ANB\": 26,\n        \"year\": 26,\n        \"assured\": 220570\n      },\n      {\n        \"ANB\": 27,\n        \"year\": 27,\n        \"assured\": 215986\n      },\n      {\n        \"ANB\": 28,\n        \"year\": 28,\n        \"assured\": 211877\n      },\n      {\n        \"ANB\": 29,\n        \"year\": 29,\n        \"assured\": 208278\n      },\n      {\n        \"ANB\": 30,\n        \"year\": 30,\n        \"assured\": 204543\n      },\n      {\n        \"ANB\": 56,\n        \"year\": -1,\n        \"assured\": 225455\n      },\n      {\n        \"ANB\": 61,\n        \"year\": -1,\n        \"assured\": 204543\n      },\n      {\n        \"ANB\": 66,\n        \"year\": -1,\n        \"assured\": 238682\n      },\n      {\n        \"ANB\": 71,\n        \"year\": -1,\n        \"assured\": 278231\n      },\n      {\n        \"ANB\": 76,\n        \"year\": -1,\n        \"assured\": 328696\n      },\n      {\n        \"ANB\": 81,\n        \"year\": -1,\n        \"assured\": 391555\n      },\n      {\n        \"ANB\": 86,\n        \"year\": -1,\n        \"assured\": 472288\n      },\n      {\n        \"ANB\": 91,\n        \"year\": -1,\n        \"assured\": 564952\n      },\n      {\n        \"ANB\": 96,\n        \"year\": -1,\n        \"assured\": 678322\n      },\n      {\n        \"ANB\": 101,\n        \"year\": -1,\n        \"assured\": 821369\n      }\n    ]\n  },\n  \"display\": {\n    \"proposalName\": \"完美的计划\",\n    \"fxRate\": 1,\n    \"currency\": \"美金\",\n    \"ANB\": 1\n  }\n}",
-			"settings":
-			{
-				"buffer_size": 6969,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "summary_views/PLP2SummaryView.jsx",
-			"settings":
-			{
-				"buffer_size": 3385,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "components/ProposalInputForm.jsx",
-			"settings":
-			{
-				"buffer_size": 4796,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "1. 团队的沟通问题\n2. 团队品牌建立\n3. ",
-			"settings":
-			{
-				"buffer_size": 24,
-				"line_ending": "Unix",
-				"name": "1. 团队的沟通问题"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -526,50 +458,88 @@
 	[
 		"/Users/cyyuen/Projects/proposal-summary",
 		"/Users/cyyuen/Projects/proposal-summary/components",
+		"/Users/cyyuen/Projects/proposal-summary/parsers",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views",
 		"/Users/cyyuen/Projects/proposal-summary/test"
 	],
 	"file_history":
 	[
 		"/Users/cyyuen/Projects/proposal-summary/components/ProposalInputForm.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIM2SummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/components/SummaryCard.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/components/ProposalSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2AccParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2AccSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2WithdrawSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2WithdrawParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIExCIM2SummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/MixedCCParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIR2xCIESummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/test/cir2.input",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIESummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIR2SummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruCCSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/.next/server/static/development/pages/index.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/server/static/development/pages/index.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/development/pages/index.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/development/pages/index.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.078020a6d2218352e93f.hot-update.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.078020a6d2218352e93f.hot-update.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.0e891151a06613593040.hot-update.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.0e891151a06613593040.hot-update.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.7d195ce9715e662ef38a.hot-update.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.7d195ce9715e662ef38a.hot-update.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.7dac659e40249db4a3bd.hot-update.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.7dac659e40249db4a3bd.hot-update.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.85f3abfc22873eabc72f.hot-update.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.85f3abfc22873eabc72f.hot-update.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.8aa6f25906f1cd93d058.hot-update.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.8aa6f25906f1cd93d058.hot-update.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.96c7bbf86414534d53be.hot-update.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.96c7bbf86414534d53be.hot-update.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.99cebf7c0c380c4c4814.hot-update.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.99cebf7c0c380c4c4814.hot-update.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.ba2c6d14902a78e5b35a.hot-update.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.ba2c6d14902a78e5b35a.hot-update.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.c2b258b2e09a76ce3091.hot-update.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.c2b258b2e09a76ce3091.hot-update.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.c2eea01ec7052941e3fd.hot-update.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.c2eea01ec7052941e3fd.hot-update.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.e48188f8ef18ae12fd7f.hot-update.js",
+		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.e48188f8ef18ae12fd7f.hot-update.js.map",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIM2SummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/MixedCCSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruBaseSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/parsers/PruParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/SingleCCParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/utils.js",
+		"/Users/cyyuen/Projects/proposal-summary/package.json",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/SingleCCSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2AccSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/PruParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/PLP2Parser.js",
+		"/Users/cyyuen/Projects/proposal-summary/test/PLP2CashValue",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/PLP2SummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/components/SummaryCard.jsx",
 		"/Users/cyyuen/Projects/test/PLP2CashValue",
 		"/Users/cyyuen/Projects/test/PLP2Assured",
-		"/Users/cyyuen/Projects/proposal-summary/test/cir2.input",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/CIR2Parser.js",
 		"/Users/cyyuen/Documents/Google Drive/Insurance Consulting/Proposal/Pru Proposal Helper/proposalGenerator.html",
 		"/Users/cyyuen/Projects/proposal-summary/test/egsp2-acc.input",
-		"/Users/cyyuen/Projects/proposal-summary/components/ProposalSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/components/PruProposalApp.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/parsers/SingleCCParser.js",
-		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2WithdrawParser.js",
-		"/Users/cyyuen/Projects/proposal-summary/parsers/MixedCCParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/constants.js",
 		"/Users/cyyuen/Projects/proposal-summary/components/KeyDetailsTable.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/app/constants.js",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/components/SummaryCard.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/test/plp2.input",
 		"/Users/cyyuen/Projects/proposal-summary/test/plcs.input",
-		"/Users/cyyuen/Projects/proposal-summary/parsers/PLP2Parser.js",
 		"/Users/cyyuen/Projects/proposal-summary/test/cie.input",
 		"/Users/cyyuen/Projects/proposal-summary/test/test.js",
 		"/Users/cyyuen/Projects/proposal-summary/tests/egsp2-acc.input",
 		"/Users/cyyuen/Projects/proposal-summary/tests/egsp2.input",
 		"/Users/cyyuen/Projects/proposal-summary/pages/index.js",
-		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2AccParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/PLCSParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/components/ProposalRenderView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parser/EGSP2AccParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/parser/EGSP2WithdrawParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/proposal-summary.sublime-project",
 		"/Users/cyyuen/Projects/proposal-summary/parser/PruParser.js",
-		"/Users/cyyuen/Projects/proposal-summary/package.json",
 		"/Users/cyyuen/Projects/wx-robot-js/run.js",
 		"/Users/cyyuen/Projects/wx-robot-js/msg.config.json",
 		"/Users/cyyuen/Projects/wx-robot-js/padchatx.js",
@@ -617,6 +587,7 @@
 		"height": 101.0,
 		"where_history":
 		[
+			"<open files>,/Users/cyyuen/Projects/proposal-summary",
 			"<current file>",
 			"<open files>",
 			"<open files>,/Users/cyyuen/Projects/proposal-summary",
@@ -630,6 +601,44 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"fullDataDisplay",
+			"display",
+			"Selec",
+			"getDetailTableDataSource",
+			"totalPremiun",
+			"pickKeyYearDetails",
+			"renderSuumaryDetails",
+			"table",
+			"renderSuumaryDetails",
+			"renderTimeline",
+			"fetchEndingTimeslot",
+			"isEndingTimeslot",
+			"renderTimeslot",
+			"renderTimeline",
+			"CIR2xCIESummaryView",
+			"CIExCIM2SummaryView",
+			"SingleCCSummaryView",
+			"renderTimelineSummary",
+			"hr",
+			"renderTimelineSummary",
+			"displayAgeYearString",
+			"style=",
+			"render",
+			"renderTimeslot",
+			"toCurrencyFormat",
+			"Tag",
+			"renderTimeslot",
+			"endAge",
+			"startAge",
+			"fetchNextWithdrawTimeslot",
+			"NEXT_TIMESLOT_REACH_END",
+			"renderTimeline",
+			"renderTimelineSummary",
+			"\"reachEnd\"",
+			"NEXT_SESSION_REACH_END",
+			"fetchNextWithdrawSession",
+			"nextSession",
+			"EGSP2AccSummaryView",
 			"ct2Assured",
 			"cashValueData",
 			"extractAgeAndYear",
@@ -672,6 +681,13 @@
 		"regex": false,
 		"replace_history":
 		[
+			"PruCCSummaryView",
+			"endANB",
+			"startANB",
+			"NEXT_TIMESLOT_REACH_END",
+			"fetchNextWithdrawTimeslot",
+			"nextTimeslot",
+			"EGSP2WithdrawSummaryView",
 			"CIM2",
 			"CIE",
 			"ProposalSummaryView",
@@ -696,263 +712,8 @@
 	"groups":
 	[
 		{
-			"selected": 4,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "components/ProposalSummaryView.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3130,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2005,
-								2005
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Simple JSX/JSX.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 458.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "parsers/PLP2Parser.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2181,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1892,
-								1892
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 736.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "parsers/PruParser.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2531,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1262,
-								1262
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 489.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "test/PLP2Assured",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2183,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								2183
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "test/PLP2CashValue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1439,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								650,
-								650
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6969,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								247,
-								247
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "summary_views/PLP2SummaryView.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3385,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3242,
-								3242
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Simple JSX/JSX.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1636.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "components/ProposalInputForm.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4796,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3227,
-								3227
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Simple JSX/JSX.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1150.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 24,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								24,
-								24
-							]
-						],
-						"settings":
-						{
-							"auto_name": "1. 团队的沟通问题",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1023,7 +784,7 @@
 		"selected_items":
 		[
 		],
-		"width": 603.0
+		"width": 556.0
 	},
 	"selected_group": 0,
 	"settings":
@@ -1033,7 +794,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 251.0,
+	"side_bar_width": 242.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

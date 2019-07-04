@@ -31,12 +31,27 @@ export default class EGSP2AccSummaryView extends PruBaseSummaryView {
 			  	return displayAgeYearString(age, record.year);
 			  }
 		}, {
+			title: '已投保费',
+			  dataIndex: 'accumulatePremiun',
+			  key: 'accumulatePremiun',
+			  align: "center",
+			  render: (number) => {
+			  	return <div> {this.toCurrencyFormat(number)} </div>
+			  }
+		},{
 			  title: '账户预期现金价值',
 			  dataIndex: 'total',
 			  key: 'total',
 			  align: "center",
 			  render: (number, record) => {
-			  	return <div> {this.toCurrencyFormat(number)} <Tag color="blue">{"增长" + parseFloat(record.increase).toFixed(2)+"倍"}</Tag> </div>
+
+			  	const increase = parseFloat(record.increase).toFixed(2);
+
+			  	if (increase < 1) {
+			  		return <div> {this.toCurrencyFormat(number)} <Tag color="red">回本期</Tag> </div>
+			  	}
+
+			  	return <div> {this.toCurrencyFormat(number)} <Tag color="blue">{"增长"+ increase +"倍"}</Tag></div>
 			  }
 		}];
 
@@ -50,7 +65,15 @@ export default class EGSP2AccSummaryView extends PruBaseSummaryView {
 
 		const  { totalPremiun } = this.props.summary;
 
-		return pickKeyYearDetails(details, totalPremiun);
+		const {
+			fullDataDisplay
+		} = this.props.display;
+
+		if (fullDataDisplay) {
+			return details;
+		}
+
+		return pickKeyYearDetails(details);
 	}
 
 	getProposalHighlights() {
@@ -93,15 +116,15 @@ export default class EGSP2AccSummaryView extends PruBaseSummaryView {
 	}
 }
 
-function pickKeyYearDetails(details, totalPremiun) {
+function pickKeyYearDetails(details) {
 
 	const year10 = details[9];
 	const year20 = details[19];
 	const year30 = details[21];
 
-	year10.increase = year10.total / totalPremiun;
-	year20.increase = year20.total / totalPremiun;
-	year30.increase = year30.total / totalPremiun;
+	year10.increase = year10.total / year10.accumulatePremiun;
+	year20.increase = year20.total / year20.accumulatePremiun;
+	year30.increase = year30.total / year30.accumulatePremiun;
 	
 	const keyYearDetails = [
 		year10,
@@ -116,7 +139,7 @@ function pickKeyYearDetails(details, totalPremiun) {
 			case 101:
 				if (details[i].ANB > year30.ANB) {
 
-					details[i].increase = details[i].total / totalPremiun;
+					details[i].increase = details[i].total / details[i].accumulatePremiun;
 
 					keyYearDetails.push(details[i]);
 				};

@@ -65,13 +65,24 @@ export default class PruBaseSummaryView extends React.Component {
 
 	}
 
+	getCurrency() {
+		return this.props.display.currency;
+	}
+
 	toCurrencyFormat(number) {
 		const {
-			fxRate,
 			currency,			
 		} = this.props.display;
 
-		return (number * fxRate).toLocaleString() + " " + currency;
+		return this.toCurrencyNumber(number) + " " + currency;
+	}
+
+	toCurrencyNumber(number) {
+		const {
+			fxRate,	
+		} = this.props.display;
+
+		return (number * fxRate).toLocaleString();		
 	}
 
 	downloadSummaryCard = () => {

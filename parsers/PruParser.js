@@ -69,6 +69,7 @@ export default class PruParser {
 
 		return {
 			summary: {
+				ANB: this.ANB,
 				totalPaymentYear: totalPaymentYear,
 				premiun: premiun,
 				totalPremiun: totalPremiun

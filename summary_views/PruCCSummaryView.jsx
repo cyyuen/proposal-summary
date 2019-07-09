@@ -3,6 +3,7 @@ import PruBaseSummaryView from './PruBaseSummaryView.jsx'
 
 import {
 	displayAgeYearString
+
 } from './utils.js'
 
 import {
@@ -45,6 +46,7 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 	}
 
 	getDetailTableColumns() {
+
 		const columns = [{
 			  title: '年期/岁数',
 			  dataIndex: 'ANB',
@@ -54,12 +56,21 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 			  	return displayAgeYearString(age, record.year);
 			  }
 		}, {
+			title: '累计保费',
+			  dataIndex: 'accumulatePremiun',
+			  key: 'accumulatePremiun',
+			  align: "center",
+			  render: (number, record) => {
+			  	return <div> {this.toCurrencyNumber(number)}</div>
+			}
+		},
+		{
 			  title: '保障金额(有事赔钱)',
 			  dataIndex: 'totalInsured',
 			  key: 'totalInsured',
 			  align: "center",
 			  render: (number, record) => {
-			  	return <div> {this.toCurrencyFormat(number)}</div>
+			  	return <div> {this.toCurrencyNumber(number)}</div>
 			}
 		}, {
 				title: '现金价值(没事理财)',
@@ -67,7 +78,7 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 				key: 'cashValue',
 				align: "center",
 				render: (number, record) => {
-					return <div> {this.toCurrencyFormat(number)} <Tag color="blue">{parseFloat(record.cashValueGearing * 100).toFixed(2)+"%"}</Tag> </div>
+					return <div> {this.toCurrencyNumber(number)} <Tag color="blue">{parseFloat(record.cashValueGearing * 100).toFixed(2)+"%"}</Tag> </div>
 			}
 		}];
 
@@ -85,18 +96,21 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 		const year11 = details[10];
 		const year20 = details[19];
 		const year25 = details[20];
+		const year30 = details[21];
 
 
 		attachGearing(year1);
 		attachGearing(year11);
 		attachGearing(year20);
 		attachGearing(year25);
+		attachGearing(year30);
 
 		const keyYearDetails = [
 			year1,
 			year11,
 			year20,
-			year25
+			year25,
+			year30
 		];
 
 		for (let i = 0, len = details.length; i != len; ++i) {
@@ -104,7 +118,7 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 				case 66:
 				case 86:
 				case 101:
-					if (details[i].ANB > year25.ANB) {
+					if (details[i].ANB > year30.ANB) {
 						attachGearing(details[i]);
 						keyYearDetails.push(details[i]);
 					};

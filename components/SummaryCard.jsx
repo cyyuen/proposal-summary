@@ -44,7 +44,7 @@ export default class SummaryCard extends React.Component {
       <Row>
         <Col offset={3} span={18}>
           <div style={{
-            width: "600px", 
+            width: "650px", 
             marginLeft: "auto",
             marginRight: "auto",
           }}

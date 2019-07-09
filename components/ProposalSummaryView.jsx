@@ -14,6 +14,7 @@ import PLCSSummaryView from '../summary_views/PLCSSummaryView.jsx'
 import PLP2SummaryView from '../summary_views/PLP2SummaryView.jsx'
 import PruCCSummaryView from '../summary_views/PruCCSummaryView.jsx'
 
+import CIPSummaryView from '../summary_views/CIPSummaryView.jsx'
 import CIR2SummaryView from '../summary_views/CIR2SummaryView.jsx'
 import CIESummaryView from '../summary_views/CIESummaryView.jsx'
 import CIM2SummaryView from '../summary_views/CIM2SummaryView.jsx'
@@ -75,6 +76,12 @@ export default class ProposalSummaryView extends React.Component {
 			case "plp2": {
 				parser = new PLP2Parser(ANB, plan1Data, plan2Data, ct2Assured, ct2Premiun, ct2PaymentPeriod);
 				view = PLP2SummaryView;
+				break;
+			};
+			case "cip": {
+				parser = new SingleCCParser(ANB, plan1Data);
+				view = CIPSummaryView;
+				
 				break;
 			};
 			case "cir2": {

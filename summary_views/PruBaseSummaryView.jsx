@@ -118,6 +118,12 @@ export default class PruBaseSummaryView extends React.Component {
 		)
 	}
 
+	renderFooter() {
+		return (
+			<div></div>
+		)
+	}
+
 	render() {
 		const {
 			display,
@@ -137,6 +143,10 @@ export default class PruBaseSummaryView extends React.Component {
 				
 				<div style={{padding: "0px 23px 40px 23px"}}>
 					{this.renderDetails()}
+				</div>
+
+				<div style={{padding: "0px 23px 40px 23px"}}>
+					{this.renderFooter()}
 				</div>
 
 			</SummaryCard>

@@ -10,7 +10,8 @@ import {
 	Tag,
 	Avatar,
 	Row,
-	Col
+	Col,
+	Divider
 } from 'antd'
 
 export default class PruCCSummaryView extends PruBaseSummaryView {
@@ -48,7 +49,7 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 	getDetailTableColumns() {
 
 		const columns = [{
-			  title: '年期/岁数',
+			  title: 'A:年期/岁数',
 			  dataIndex: 'ANB',
 			  key: 'ANB',
 			  align: "center",
@@ -56,7 +57,7 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 			  	return displayAgeYearString(age, record.year);
 			  }
 		}, {
-			title: '累计保费',
+			title: 'B:累计保费',
 			  dataIndex: 'accumulatePremiun',
 			  key: 'accumulatePremiun',
 			  align: "center",
@@ -65,7 +66,7 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 			}
 		},
 		{
-			  title: '保障金额(有事赔钱)',
+			  title: 'C:保障金额(有事赔钱)',
 			  dataIndex: 'totalInsured',
 			  key: 'totalInsured',
 			  align: "center",
@@ -73,7 +74,7 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 			  	return <div> {this.toCurrencyNumber(number)}</div>
 			}
 		}, {
-				title: '现金价值(没事理财)',
+				title: 'D:现金价值(没事理财)',
 				dataIndex: 'cashValue',
 				key: 'cashValue',
 				align: "center",
@@ -83,6 +84,20 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 		}];
 
 		return columns;
+	}
+
+	renderFooter() {
+		return (
+			<div>
+			<Divider orientation="left">保障运作模式</Divider>
+
+			重大疾病保险运作的模式，简单总结就是"以小钱换大保障，有事赔钱，没事理财"。<br/>
+			🎯上表B栏数据是相应年龄时，累计缴纳的保费。<br/>
+			🎯C栏数据是相应年龄时，客户遇到重大疾病或身故时，得到的理赔。<br/>
+			🎯D栏数据是相应年龄时，客户选择退保时，可以拿回到手的钱。
+			
+    		</div>
+		)
 	}
 
 	getDetailTableDataSource() {

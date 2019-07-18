@@ -21,6 +21,7 @@ import CIM2SummaryView from '../summary_views/CIM2SummaryView.jsx'
 
 import CIExCIM2SummaryView from '../summary_views/CIExCIM2SummaryView.jsx'
 import CIR2xCIESummaryView from '../summary_views/CIR2xCIESummaryView.jsx'
+import CIPxCIESummaryView from '../summary_views/CIPxCIESummaryView.jsx'
 
 const { TextArea } = Input;
 
@@ -111,6 +112,12 @@ export default class ProposalSummaryView extends React.Component {
 			case "cir2+cie": {
 				parser = new MixedCCParser(ANB, plan1Data, plan2Data);
 				view = CIR2xCIESummaryView;
+
+				break;
+			};
+			case "cip+cie": {
+				parser = new MixedCCParser(ANB, plan1Data, plan2Data);
+				view = CIPxCIESummaryView;
 
 				break;
 			};

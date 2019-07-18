@@ -465,9 +465,14 @@
 	"file_history":
 	[
 		"/Users/cyyuen/Projects/proposal-summary/components/ProposalInputForm.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/components/ProposalSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2AccParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/PruParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruBaseSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/components/SummaryCard.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIPSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruCCSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2AccSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/components/ProposalSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2WithdrawSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2WithdrawParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIExCIM2SummaryView.jsx",
@@ -476,7 +481,6 @@
 		"/Users/cyyuen/Projects/proposal-summary/test/cir2.input",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIESummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIR2SummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruCCSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/.next/server/static/development/pages/index.js",
 		"/Users/cyyuen/Projects/proposal-summary/.next/server/static/development/pages/index.js.map",
 		"/Users/cyyuen/Projects/proposal-summary/.next/static/development/pages/index.js",
@@ -507,16 +511,13 @@
 		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.e48188f8ef18ae12fd7f.hot-update.js.map",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIM2SummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/MixedCCSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruBaseSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/SingleCCParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/utils.js",
 		"/Users/cyyuen/Projects/proposal-summary/package.json",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/SingleCCSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/parsers/PruParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/PLP2Parser.js",
 		"/Users/cyyuen/Projects/proposal-summary/test/PLP2CashValue",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/PLP2SummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/components/SummaryCard.jsx",
 		"/Users/cyyuen/Projects/test/PLP2CashValue",
 		"/Users/cyyuen/Projects/test/PLP2Assured",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/CIR2Parser.js",
@@ -587,6 +588,7 @@
 		"height": 101.0,
 		"where_history":
 		[
+			"<current file>",
 			"<open files>,/Users/cyyuen/Projects/proposal-summary",
 			"<current file>",
 			"<open files>",
@@ -601,6 +603,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"toCurrencyFormat",
+			"SummaryCard",
+			"ProposalSummaryView",
+			"CIR2",
 			"fullDataDisplay",
 			"display",
 			"Selec",
@@ -681,6 +687,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"CIP",
 			"PruCCSummaryView",
 			"endANB",
 			"startANB",
@@ -784,7 +791,7 @@
 		"selected_items":
 		[
 		],
-		"width": 556.0
+		"width": 852.0
 	},
 	"selected_group": 0,
 	"settings":

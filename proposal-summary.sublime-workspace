@@ -465,6 +465,8 @@
 	"file_history":
 	[
 		"/Users/cyyuen/Projects/proposal-summary/components/ProposalInputForm.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/components/ProposalSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIPxCIESummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2AccParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/PruParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruBaseSummaryView.jsx",
@@ -472,7 +474,6 @@
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIPSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruCCSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2AccSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/components/ProposalSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2WithdrawSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2WithdrawParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIExCIM2SummaryView.jsx",
@@ -603,6 +604,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"cip+cie",
+			"CIR2x",
 			"toCurrencyFormat",
 			"SummaryCard",
 			"ProposalSummaryView",
@@ -687,6 +690,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"CIPx",
 			"CIP",
 			"PruCCSummaryView",
 			"endANB",
@@ -801,7 +805,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 242.0,
+	"side_bar_width": 271.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

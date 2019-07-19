@@ -5,6 +5,10 @@ import { Divider, Table, Timeline, Icon, Button } from 'antd'
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
 
+const WAN = 10000
+const MILLION = 1000000
+const YI = 100000000
+
 const CARD_ID = "summary-card-id";
 
 export default class PruBaseSummaryView extends React.Component {
@@ -82,7 +86,16 @@ export default class PruBaseSummaryView extends React.Component {
 			fxRate,	
 		} = this.props.display;
 
-		return (number * fxRate).toLocaleString();		
+		const total = number * fxRate;
+
+
+		if (total >= YI) {
+			return Math.ceil(total / YI).toLocaleString() + "亿" 
+		} else if (total >= MILLION) {
+			return Math.ceil(total / WAN).toLocaleString() + "万"
+		}
+
+		return Math.ceil(total).toLocaleString();		
 	}
 
 	downloadSummaryCard = () => {

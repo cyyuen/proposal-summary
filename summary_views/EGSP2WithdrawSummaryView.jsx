@@ -178,7 +178,7 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 								  key: 'remainingValue',
 								  align: "center",
 								  render: (number, record) => {
-								  	return <div> {this.toCurrencyFormat(number)}</div>
+								  	return <div> {this.toCurrencyNumber(number)}</div>
 								  }
 							}, {
 								  title: '合计',
@@ -186,7 +186,7 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 								  key: 'total',
 								  align: "center",
 								  render: (number, record) => {
-								  	return <div> {this.toCurrencyFormat(number)}  </div>
+								  	return <div> {this.toCurrencyNumber(number)}  </div>
 								  }
 							}
 						]}
@@ -211,7 +211,7 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 				    <Col span={12}>
 				      <Statistic 
 				      	title="每年提取" 
-				      	value={this.toCurrencyFormat(timeslot.withdrawValueEachYear)}
+				      	value={this.toCurrencyNumber(timeslot.withdrawValueEachYear)}
 				      	valueStyle={{
 				      		"color": "rgb(154, 29, 73)",
     						"font-size": "25px"
@@ -221,7 +221,7 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 				    <Col span={12}>
 				      <Statistic 
 				      	title={timeslot.totalYears + "年共提取"} 
-				      	value={this.toCurrencyFormat(timeslot.withdrawValueEachYear * timeslot.totalYears)}
+				      	value={this.toCurrencyNumber(timeslot.withdrawValueEachYear * timeslot.totalYears)}
 				      	valueStyle={{
 				      		"color": "rgb(154, 29, 73)",
     						"font-size": "25px"
@@ -239,7 +239,7 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
     				"letter-spacing": "1px",
     				"margin-top": "-20px"
 				}}>
-					ANB {timeslot.endANB}岁时，账户仍剩余{this.toCurrencyFormat(timeslot.remainingValue)}
+					ANB {timeslot.endANB}岁时，账户仍剩余{this.toCurrencyNumber(timeslot.remainingValue)}
 				</div>
 			</div></Timeline.Item>
 	}
@@ -253,7 +253,7 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 				    <Col span={8}>
 				      <Statistic 
 				      	title={"累积提取(" + this.toCurrencyFormat(summary.totalWithdraw).split(" ")[1] + ")"} 
-				      	value={this.toCurrencyFormat(summary.totalWithdraw).split(" ")[0]}
+				      	value={this.toCurrencyNumber(summary.totalWithdraw)}
 				      	valueStyle={{
 				      		"color": "rgb(154, 29, 73)",
     						"font-size": "25px"
@@ -263,7 +263,7 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 				    <Col span={8}>
 				      <Statistic 
 				      	title={"总价值(" + this.toCurrencyFormat(summary.totalValue).split(" ")[1] + ")"} 
-				      	value={this.toCurrencyFormat(summary.totalValue).split(" ")[0]}
+				      	value={this.toCurrencyNumber(summary.totalValue)}
 				      	valueStyle={{
 				      		"color": "rgb(154, 29, 73)",
     						"font-size": "25px"
@@ -287,6 +287,20 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 			</div>
 	}
 
+	renderFooter() {
+		return (
+			<div>
+			<Divider orientation="left"> 储蓄险运作模式</Divider>
+
+			储蓄险运作的模式，简单总结就是"为未来储蓄，是一个保本的灵活储蓄账户。"<br/>
+			🎯上表B栏数据是相应年龄时，累计已经提取的金额。<br/>
+			🎯C栏数据是相应年龄时，已经提取了B栏金额的情况下，账户里仍剩下多少钱。客户可以选择再提取一部分，或者将里面的资金全部提取出来。<br/>
+			🎯D栏数据是相应年龄时，储蓄险资金的总价值:即已经累计提取的(B)+账户里的(C)。
+			
+    		</div>
+		)
+	}
+
 	renderSummaryDetails() {
 		const {
 			details
@@ -307,7 +321,7 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 			<Table 
 						dataSource={highlights} 
 						columns={[{
-								  title: '年期/岁数',
+								  title: 'A: 年期/岁数',
 								  dataIndex: 'ANB',
 								  key: 'ANB',
 								  align: "center",
@@ -315,28 +329,28 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 								  	return displayAgeYearString(age, record.year);
 								  }
 							}, {
-								  title: '累计提取',
+								  title: 'B: 累计提取',
 								  dataIndex: 'totalWithdraw',
 								  key: 'totalWithdraw',
 								  align: "center",
 								  render: (number, record) => {
-								  	return <div> {this.toCurrencyFormat(number)}</div>
+								  	return <div> {this.toCurrencyNumber(number)}</div>
 								  }
 							}, {
-								  title: '账户现金价值',
+								  title: 'C: 账户现金价值',
 								  dataIndex: 'remainingValue',
 								  key: 'remainingValue',
 								  align: "center",
 								  render: (number, record) => {
-								  	return <div> {this.toCurrencyFormat(number)}</div>
+								  	return <div> {this.toCurrencyNumber(number)}</div>
 								  }
 							}, {
-								  title: '合计',
+								  title: 'D: 合计 (B+C)',
 								  dataIndex: 'total',
 								  key: 'total',
 								  align: "center",
 								  render: (number, record) => {
-								  	return <div> {this.toCurrencyFormat(number)}  </div>
+								  	return <div> {this.toCurrencyNumber(number)}  </div>
 								  }
 							}
 						]}
@@ -390,7 +404,7 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 			const highlightDetail = highlightDetails[i];
 
 			highlights.push(this.createHighlight(
-				<span>到ANB {highlightDetail.ANB}岁，增值到{this.toCurrencyFormat(highlightDetail.total)}  </span>
+				<span>到ANB {highlightDetail.ANB}岁，增值到{this.toCurrencyNumber(highlightDetail.total)}  </span>
 			))
 		}
 

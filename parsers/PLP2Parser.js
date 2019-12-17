@@ -37,9 +37,9 @@ export default class PLP2Parser extends PruParser {
 		super(ANB, null);
 
 		this.ANB = ANB;
-		this.ct2Assured = parseInt(ct2Assured);
-		this.ct2Premiun = parseInt(ct2Premiun);
-		this.ct2PaymentPeriod = parseInt(ct2PaymentPeriod);
+		this.ct2Assured = parseFloat(ct2Assured);
+		this.ct2Premiun = parseFloat(ct2Premiun);
+		this.ct2PaymentPeriod = parseFloat(ct2PaymentPeriod);
 	 	this.cashValueParser = new PLP2CashValueParser(ANB, data1);
 		this.assuredParser = new PLP2AssuredParser(ANB, data2);
 	}
@@ -58,9 +58,9 @@ export default class PLP2Parser extends PruParser {
 			totalFreeInsuredYears: 20,
 			basicInsured: assuredDataDetails[0].assured / 2,
 			freeInsured: assuredDataDetails[0].assured / 2,
-			ct2Assured: parseInt(this.ct2Assured),
-			ct2Premiun: parseInt(this.ct2Premiun),
-			ct2PaymentPeriod: parseInt(this.ct2PaymentPeriod),
+			ct2Assured: parseFloat(this.ct2Assured),
+			ct2Premiun: parseFloat(this.ct2Premiun),
+			ct2PaymentPeriod: parseFloat(this.ct2PaymentPeriod),
 		})
 
 		const details = [];

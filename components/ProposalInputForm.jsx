@@ -139,7 +139,7 @@ class ProposalInputForm extends React.Component {
 	        	</Form.Item>
 
 		        <Form.Item
-		          label="CT2保额"
+		          label="CIT2/PLT保额"
 		          {...formItemLayout}
 		        >
 
@@ -150,7 +150,7 @@ class ProposalInputForm extends React.Component {
 	        	</Form.Item>
 
 	        	<Form.Item
-		          label="CT2保费"
+		          label="CIT2/PLT保费"
 		          {...formItemLayout}
 		        >
 
@@ -160,7 +160,7 @@ class ProposalInputForm extends React.Component {
 	        	
 	        	</Form.Item>
 	        	<Form.Item
-		          label="CT2保障年份"
+		          label="CIT2/PLT保障年份"
 		          {...formItemLayout}
 		        >
 

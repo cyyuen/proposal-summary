@@ -80,43 +80,43 @@ export default class ProposalSummaryView extends React.Component {
 				break;
 			};
 			case "cip": {
-				parser = new SingleCCParser(ANB, plan1Data);
+				parser = new SingleCCParser(ANB, plan1Data, ct2Assured, ct2Premiun, ct2PaymentPeriod);
 				view = CIPSummaryView;
 				
 				break;
 			};
 			case "cir2": {
-				parser = new SingleCCParser(ANB, plan1Data);
+				parser = new SingleCCParser(ANB, plan1Data, ct2Assured, ct2Premiun, ct2PaymentPeriod);
 				view = CIR2SummaryView;
 				
 				break;
 			};
 			case "cie": {
-				parser = new SingleCCParser(ANB, plan1Data);
+				parser = new SingleCCParser(ANB, plan1Data, ct2Assured, ct2Premiun, ct2PaymentPeriod);
 				view = CIESummaryView;
 
 				break;
 			};
 			case "cim2": {
-				parser = new SingleCCParser(ANB, plan1Data);
+				parser = new SingleCCParser(ANB, plan1Data, ct2Assured, ct2Premiun, ct2PaymentPeriod);
 				view = CIM2SummaryView;
 				
 				break;
 			};
 			case "cie+cim2": {
-				parser = new MixedCCParser(ANB, plan1Data, plan2Data);
+				parser = new MixedCCParser(ANB, plan1Data, plan2Data, ct2Assured, ct2Premiun, ct2PaymentPeriod);
 				view = CIExCIM2SummaryView;
 				
 				break;
 			};
 			case "cir2+cie": {
-				parser = new MixedCCParser(ANB, plan1Data, plan2Data);
+				parser = new MixedCCParser(ANB, plan1Data, plan2Data, ct2Assured, ct2Premiun, ct2PaymentPeriod);
 				view = CIR2xCIESummaryView;
 
 				break;
 			};
 			case "cip+cie": {
-				parser = new MixedCCParser(ANB, plan1Data, plan2Data);
+				parser = new MixedCCParser(ANB, plan1Data, plan2Data, ct2Assured, ct2Premiun, ct2PaymentPeriod);
 				view = CIPxCIESummaryView;
 
 				break;

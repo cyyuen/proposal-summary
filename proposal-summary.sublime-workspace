@@ -403,53 +403,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "summary_views/PruBaseSummaryView.jsx",
-			"settings":
-			{
-				"buffer_size": 3069,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "summary_views/EGSP2WithdrawSummaryView.jsx",
-			"settings":
-			{
-				"buffer_size": 9128,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "summary_views/PruCCSummaryView.jsx",
-			"settings":
-			{
-				"buffer_size": 3268,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "洪喜亮\n黄志昌\n李志荣\n林广全\n梁宏\n朱光亮\n钟敏玲\n江桂林\n陈玉琴\n吴梅",
-			"settings":
-			{
-				"buffer_size": 37,
-				"line_ending": "Unix",
-				"name": "洪喜亮"
-			}
-		},
-		{
-			"contents": "35歲 279.00\n40歲 378.00\n45歲 600.00\n50歲 942.00\n55歲 1,530.00\n60歲 2,574.00\n65歲 4,230.00\n70歲 8,322.00\n75歲 16,038.00\n80歲 31,074.00\n85歲 45,138.00",
-			"file": "/Users/cyyuen/Desktop/好友列表.json",
-			"file_size": 13116,
-			"file_write_time": 132086342438125345,
-			"settings":
-			{
-				"buffer_size": 137,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -513,15 +466,20 @@
 	[
 		"/Users/cyyuen/Projects/proposal-summary/components/ProposalInputForm.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/components/ProposalSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIE2SummaryView.jsx",
+		"/Users/cyyuen/Desktop/好友列表.json",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/PLP2Parser.js",
+		"/Users/cyyuen/Projects/proposal-summary/parsers/SingleCCParser.js",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruBaseSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2WithdrawSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/node_modules/dom-to-image/bower_components/ocrad-bower/ocrad-0.23-pre1/Makefile.in",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIPxCIESummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2AccParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/PruParser.js",
-		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruBaseSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/components/SummaryCard.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIPSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruCCSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2AccSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2WithdrawSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2WithdrawParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIExCIM2SummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/MixedCCParser.js",
@@ -559,11 +517,9 @@
 		"/Users/cyyuen/Projects/proposal-summary/.next/static/webpack/static/development/pages/index.js.e48188f8ef18ae12fd7f.hot-update.js.map",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIM2SummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/MixedCCSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/parsers/SingleCCParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/utils.js",
 		"/Users/cyyuen/Projects/proposal-summary/package.json",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/SingleCCSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/parsers/PLP2Parser.js",
 		"/Users/cyyuen/Projects/proposal-summary/test/PLP2CashValue",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/PLP2SummaryView.jsx",
 		"/Users/cyyuen/Projects/test/PLP2CashValue",
@@ -651,6 +607,16 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"CIESummaryView",
+			"$B$10",
+			"B11",
+			"B10",
+			"CT2",
+			"$B$",
+			"×$E$3",
+			"$A$73",
+			"SummaryCard",
+			"totalPremiun",
 			"toCurrencyNumber",
 			"toCurrencyFormat",
 			"cip+cie",
@@ -739,6 +705,14 @@
 		"regex": false,
 		"replace_history":
 		[
+			"CIE2SummaryView",
+			"$E$10",
+			"$B$11",
+			"$B$10",
+			"CIT2/PLT",
+			"$D$",
+			"",
+			"I3",
 			"CIPx",
 			"CIP",
 			"PruCCSummaryView",
@@ -772,152 +746,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "summary_views/PruBaseSummaryView.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3069,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1746,
-								1746
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Simple JSX/JSX.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "summary_views/EGSP2WithdrawSummaryView.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9128,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6667,
-								6667
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Simple JSX/JSX.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "summary_views/PruCCSummaryView.jsx",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 3268,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1812,
-								1812
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Simple JSX/JSX.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 657.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 37,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								37
-							]
-						],
-						"settings":
-						{
-							"auto_name": "洪喜亮",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/Users/cyyuen/Desktop/好友列表.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 137,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								137
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -987,8 +817,12 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"$(lib_objs)"
+			]
 		],
-		"width": 852.0
+		"width": 828.0
 	},
 	"selected_group": 0,
 	"settings":
@@ -998,7 +832,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 271.0,
+	"side_bar_width": 311.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -1,6 +1,10 @@
 import React from 'react';
 import SummaryCard from '../components/SummaryCard.jsx';
-import { Divider, Table, Timeline, Icon, Button } from 'antd'
+import { Divider, Table, Timeline, Icon, Button, Card, Input } from 'antd'
+
+const {
+	TextArea
+} = Input;
 
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
@@ -17,7 +21,7 @@ export default class PruBaseSummaryView extends React.Component {
 	 to be overrided by subclasses
 	*/
 	renderHighlight() {
-		
+
 		const highlights = this.getProposalHighlights();
 
 		const timelineItems = [];
@@ -75,7 +79,7 @@ export default class PruBaseSummaryView extends React.Component {
 
 	toCurrencyFormat(number) {
 		const {
-			currency,			
+			currency,
 		} = this.props.display;
 
 		return this.toCurrencyNumber(number) + " " + currency;
@@ -83,19 +87,18 @@ export default class PruBaseSummaryView extends React.Component {
 
 	toCurrencyNumber(number) {
 		const {
-			fxRate,	
+			fxRate,
 		} = this.props.display;
 
 		const total = number * fxRate;
 
-
 		if (total >= YI) {
-			return Math.ceil(total / YI).toLocaleString() + "亿" 
+			return Math.ceil(total / YI).toLocaleString() + "亿"
 		} else if (total >= MILLION) {
 			return Math.ceil(total / WAN).toLocaleString() + "万"
 		}
 
-		return Math.ceil(total).toLocaleString();		
+		return Math.ceil(total).toLocaleString();
 	}
 
 	downloadSummaryCard = () => {
@@ -117,17 +120,32 @@ export default class PruBaseSummaryView extends React.Component {
     		});
 	}
 
+	renderScript() {
+		const scriptTxt = this.getScript();
+
+		console.log("script");
+		console.log(scriptTxt);
+
+		return scriptTxt.split("\n").map((item, i) => {
+			return <div id={"script"+i}> {item} </div>
+		});
+	}
+
+	getScript() {
+		return "Script is coming soon..."
+	}
+
 	renderDetails() {
 		return (
-			
-					<Table 
-						dataSource={this.getDetailTableDataSource()} 
+
+					<Table
+						dataSource={this.getDetailTableDataSource()}
 						columns={this.getDetailTableColumns()}
 						size="middle"
 						bordered
 						pagination={false}
 					/>
-				
+
 		)
 	}
 
@@ -149,11 +167,11 @@ export default class PruBaseSummaryView extends React.Component {
 				cardID = {CARD_ID}
 				{...display}
 				{...summary}
-			>	
+			>
 				<div style={{padding: "0px 23px 0px 23px"}}>
 					{this.renderHighlight()}
 				</div>
-				
+
 				<div style={{padding: "0px 23px 40px 23px"}}>
 					{this.renderDetails()}
 				</div>
@@ -163,7 +181,16 @@ export default class PruBaseSummaryView extends React.Component {
 				</div>
 
 			</SummaryCard>
-			<div style={{textAlign: "center", marginTop: "20px"}}><Button onClick={this.downloadSummaryCard}> Download Image </Button></div>
+			<div style={{textAlign: "center", marginTop: "20px"}}>
+				<Button onClick={this.downloadSummaryCard}> Download Image </Button>
+			</div>
+			<div style={{marginTop: "20px", "margin-left": "auto", "margin-right": "auto"}}>
+				<Card title="讲解话术" bordered={true} style={{ width: 500 }}>
+				<div>
+					{this.renderScript()}
+				</div>
+				</Card>
+			</div>
 			</div>
 		)
 	}

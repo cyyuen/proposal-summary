@@ -13,6 +13,19 @@ export default class SingleCCParser extends PruParser {
 		this.ct2Assured = parseFloat(ct2Assured);
 		this.ct2Premiun = parseFloat(ct2Premiun);
 		this.ct2PaymentPeriod = parseFloat(ct2PaymentPeriod);
+
+    this.keyYearDetails = {
+      ANB66: {
+        year:0,
+        assured: 0,
+        cashValue:0
+      },
+      ANB81: {
+        year:0,
+        assured: 0,
+        cashValue: 0
+      }
+    }
 	}
 
 	parse() {
@@ -24,6 +37,7 @@ export default class SingleCCParser extends PruParser {
 			freeInsured: parsedData.details[0].freeInsured,
 			premiun: parsedData.summary.premiun + this.ct2Premiun,
 			totalPremiun: parsedData.summary.totalPremiun + this.ct2Premiun * this.ct2PaymentPeriod,
+      keyYearDetails: this.keyYearDetails
 		});
 
 		return parsedData;
@@ -50,6 +64,23 @@ export default class SingleCCParser extends PruParser {
 			ct2AccPremiun = this.ct2Premiun * year;
 		}
 
+    let cashValue = this.dataNumStringToNumber(dataline[4]);
+    let totalInsured = this.dataNumStringToNumber(dataline[8]) + ct2Assured;
+
+    if (ANB === 66) {
+      this.keyYearDetails.ANB66 = {
+        year:year,
+        totalInsured: totalInsured,
+        cashValue:cashValue
+      }
+    } else if (ANB === 81) {
+      this.keyYearDetails.ANB81 = {
+        year:year,
+        totalInsured: totalInsured,
+        cashValue:cashValue
+      }
+    }
+
 		return {
 			ANB: ANB,
 			year: year,
@@ -59,9 +90,9 @@ export default class SingleCCParser extends PruParser {
 			// 赠送保额
 			freeInsured: freeInsured,
 			// 现金价值
-			cashValue: this.dataNumStringToNumber(dataline[4]),
+			cashValue: cashValue,
 			// 总保额
-			totalInsured: this.dataNumStringToNumber(dataline[8]) + ct2Assured
+			totalInsured: totalInsured
 		}
 	}
 }

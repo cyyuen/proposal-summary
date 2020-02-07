@@ -18,6 +18,17 @@ export default class EGSP2WithdrawParser extends PruParser {
 		return parsedData;
 	}
 
+	/**
+	@return EGSP2DataLine {
+		ANB,
+		year,
+		accumulatePremiun,
+		withdrawValue,
+		totalWithdraw,
+		remainingValue,
+		total
+	}
+	*/
 	parseDataLine(ANB, year, accumulatePremiun, dataline) {
 
 		const withdrawValue = this.dataNumStringToNumber(dataline[4]);
@@ -35,7 +46,7 @@ export default class EGSP2WithdrawParser extends PruParser {
 			withdrawValue: withdrawValue,
 			remainingValue: remainingValue,
 			totalWithdraw: totalWithdraw,
-			total: total 
+			total: total
 		}
 	}
 }

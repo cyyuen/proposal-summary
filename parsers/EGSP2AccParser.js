@@ -2,6 +2,15 @@ import PruParser from "./PruParser.js"
 
 export default class EGSP2AccParser extends PruParser {
 
+	/**
+	@return EGSP2DataLine {
+		ANB,
+		year,
+		accumulatePremiun,
+		total,
+		increase
+	}
+	*/
 	parseDataLine(ANB, year, accumulatePremiun, dataline) {
 
 		const total = this.dataNumStringToNumber(dataline[5]);

@@ -7,13 +7,13 @@ import SingleCCParser from './SingleCCParser.js'
  */
 export default class MixedCCParser extends PruParser {
 
-	constructor(ANB, data1,  data2) {
+	constructor(ANB, data1,  data2, ct2Assured, ct2Premiun, ct2PaymentPeriod) {
 		super(ANB, null);
 
 		this.ANB = ANB;
 	 	this.ccParser1 = new SingleCCParser(ANB, data1);
 		this.ccParser2 = new SingleCCParser(ANB, data2);
-		this.mixParser = new SingleCCParser(ANB, this.mixCCDetails(data1, data2));
+		this.mixParser = new SingleCCParser(ANB, this.mixCCDetails(data1, data2), ct2Assured, ct2Premiun, ct2PaymentPeriod);
 	}
 
 	parse() {

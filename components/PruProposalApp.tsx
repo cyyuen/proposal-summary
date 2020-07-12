@@ -1,34 +1,46 @@
-import React from 'react';
+import * as React from 'react';
 
-import ProposalInputForm from './ProposalInputForm.jsx';
-import ProposalSummaryView from './ProposalSummaryView.jsx';
-
-import styles from 'antd/dist/antd.css';
+import ProposalInputForm from './ProposalInputForm';
+import ProposalSummaryView from './ProposalSummaryViewContainer';
 
 import { Layout } from 'antd';
 
 const {
-  Header, Footer, Sider, Content,
+  Header, Content,
 } = Layout;
 
-export default class PruProposalApp extends React.Component {
-  constructor(props) {
+export interface ProposalInputData {
+  proposalData?: {
+    ANB?: any,
+    planSelect?: any,
+    fxRate?: any,
+    proposalName?: any,
+    currency?: any,
+    plan1?: any,
+    plan2?: any,
+    ct2Assured?: any,
+    ct2Premiun?: any,
+    ct2PaymentPeriod?: any,
+    fullDataDisplay?: any
+  }
+}
+
+export default class PruProposalApp extends React.Component<ProposalInputData, ProposalInputData> {
+  constructor(props: Readonly<ProposalInputData>) {
     super(props);
     this.state = {proposalData: null};
     this.onProposalInputSubmitted = this.onProposalInputSubmitted.bind(this);
   }
 
-  onProposalInputSubmitted(proposalData) {
-
+  onProposalInputSubmitted(proposalData: any) {
     console.log(proposalData);
-
     this.setState({proposalData: proposalData});
   }
 
   render() {
     return (
       <div>
-        <style dangerouslySetInnerHTML={{ __html: styles}} />
+        <style/>
         <Layout>
           <Header> 
             <h2 style={{color: "white", textAlign: "center"}}> Pru Proposal Summary Generater </h2> 

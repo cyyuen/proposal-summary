@@ -1,5 +1,5 @@
-import PruParser from "./PruParser.js"
-import SingleCCParser from './SingleCCParser.js'
+import PruParser from "./PruParser"
+import SingleCCParser from './SingleCCParser'
 
 /**
  Mixed CC Parser

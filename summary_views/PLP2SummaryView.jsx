@@ -1,5 +1,5 @@
 import React from 'react';
-import PruBaseSummaryView from './PruBaseSummaryView.jsx'
+import PruBaseSummaryView from './PruBaseSummaryView'
 
 import {
 	Tag,
@@ -12,7 +12,7 @@ import {
 	INSURANCE_ICON,
 	DOLLAR_ICON,
 	CLUSTER_ICON
-} from '../constants.js'
+} from '../constants'
 
 export default class PLP2SummaryView extends PruBaseSummaryView {
 

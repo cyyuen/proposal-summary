@@ -464,9 +464,10 @@
 	],
 	"file_history":
 	[
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2AccSummaryView.jsx",
+		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIE2SummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/components/ProposalInputForm.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/components/ProposalSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIE2SummaryView.jsx",
 		"/Users/cyyuen/Desktop/好友列表.json",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/PLP2Parser.js",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/SingleCCParser.js",
@@ -479,7 +480,6 @@
 		"/Users/cyyuen/Projects/proposal-summary/components/SummaryCard.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIPSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/PruCCSummaryView.jsx",
-		"/Users/cyyuen/Projects/proposal-summary/summary_views/EGSP2AccSummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/EGSP2WithdrawParser.js",
 		"/Users/cyyuen/Projects/proposal-summary/summary_views/CIExCIM2SummaryView.jsx",
 		"/Users/cyyuen/Projects/proposal-summary/parsers/MixedCCParser.js",
@@ -607,6 +607,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"61",
+			"65",
 			"CIESummaryView",
 			"$B$10",
 			"B11",

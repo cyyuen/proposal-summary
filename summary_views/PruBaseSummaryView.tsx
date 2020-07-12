@@ -1,5 +1,5 @@
-import React from 'react';
-import SummaryCard from '../components/SummaryCard.jsx';
+import * as React from 'react';
+import SummaryCard from '../components/SummaryCard';
 import { Divider, Table, Timeline, Icon, Button, Card, Input } from 'antd'
 
 const {
@@ -15,7 +15,16 @@ const YI = 100000000
 
 const CARD_ID = "summary-card-id";
 
-export default class PruBaseSummaryView extends React.Component {
+import {PruPlanDataset} from "../Dataset"
+
+import {PruPlanDisplaySetting} from "../components/ProposalSummaryViewContainer"
+
+export interface PruSummaryProps {
+	dataset: PruPlanDataset
+	display: PruPlanDisplaySetting
+}
+
+export default abstract class PruBaseSummaryView<T extends PruSummaryProps> extends React.Component<T> {
 
 	/**
 	 to be overrided by subclasses
@@ -61,17 +70,11 @@ export default class PruBaseSummaryView extends React.Component {
 		icon: xxxx
 	}]
 	*/
-	getProposalHighlights() {
+	abstract getProposalHighlights(): [{content, icon}]
 
-	}
+	abstract getDetailTableColumns() : any[]
 
-	getDetailTableColumns() {
-
-	}
-
-	getDetailTableDataSource() {
-
-	}
+	abstract getDetailTableDataSource(): any[]
 
 	getCurrency() {
 		return this.props.display.currency;
@@ -156,9 +159,10 @@ export default class PruBaseSummaryView extends React.Component {
 	}
 
 	render() {
+
 		const {
 			display,
-			summary
+			dataset
 		} = this.props;
 
 		return (
@@ -166,7 +170,7 @@ export default class PruBaseSummaryView extends React.Component {
 			<SummaryCard
 				cardID = {CARD_ID}
 				{...display}
-				{...summary}
+				{...dataset.summary}
 			>
 				<div style={{padding: "0px 23px 0px 23px"}}>
 					{this.renderHighlight()}
@@ -184,7 +188,7 @@ export default class PruBaseSummaryView extends React.Component {
 			<div style={{textAlign: "center", marginTop: "20px"}}>
 				<Button onClick={this.downloadSummaryCard}> Download Image </Button>
 			</div>
-			<div style={{marginTop: "20px", "margin-left": "auto", "margin-right": "auto"}}>
+			<div style={{marginTop: "20px", marginLeft: "auto", marginRight: "auto"}}>
 				<Card title="讲解话术" bordered={true} style={{ width: 500 }}>
 				<div>
 					{this.renderScript()}

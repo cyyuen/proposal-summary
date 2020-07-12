@@ -1,34 +1,46 @@
 import { Input } from 'antd';
-import React from 'react';
+import * as React from 'react';
 
-import EGSP2AccParser from '../parsers/EGSP2AccParser.js'
-import EGSP2WithdrawParser from '../parsers/EGSP2WithdrawParser.js'
-import MixedCCParser from '../parsers/MixedCCParser.js'
-import PLCSParser from '../parsers/PLCSParser.js'
-import PLP2Parser from '../parsers/PLP2Parser.js'
-import SingleCCParser from '../parsers/SingleCCParser.js'
+import EGSP2AccParser from '../parsers/EGSP2AccParser'
+import EGSP2WithdrawParser from '../parsers/EGSP2WithdrawParser'
+import MixedCCParser from '../parsers/MixedCCParser'
+import PLCSParser from '../parsers/PLCSParser'
+import PLP2Parser from '../parsers/PLP2Parser'
+import SingleCCParser from '../parsers/SingleCCParser'
 
-import EGSP2AccSummaryView from '../summary_views/EGSP2AccSummaryView.jsx'
-import EGSP2WithdrawSummaryView from '../summary_views/EGSP2WithdrawSummaryView.jsx'
-import PLCSSummaryView from '../summary_views/PLCSSummaryView.jsx'
-import PLP2SummaryView from '../summary_views/PLP2SummaryView.jsx'
-import PruCCSummaryView from '../summary_views/PruCCSummaryView.jsx'
+import EGSP2AccSummaryView from '../summary_views/EGSP2AccSummaryView'
+import EGSP2WithdrawSummaryView from '../summary_views/EGSP2WithdrawSummaryView'
+import PLCSSummaryView from '../summary_views/PLCSSummaryView'
+import PLP2SummaryView from '../summary_views/PLP2SummaryView'
+import PruCCSummaryView from '../summary_views/PruCCSummaryView'
 
-import CIPSummaryView from '../summary_views/CIPSummaryView.jsx'
-import CIR2SummaryView from '../summary_views/CIR2SummaryView.jsx'
-import CIESummaryView from '../summary_views/CIESummaryView.jsx'
-import CIE2SummaryView from '../summary_views/CIE2SummaryView.jsx'
-import CIM2SummaryView from '../summary_views/CIM2SummaryView.jsx'
+import CIPSummaryView from '../summary_views/CIPSummaryView'
+import CIR2SummaryView from '../summary_views/CIR2SummaryView'
+import CIESummaryView from '../summary_views/CIESummaryView'
+import CIE2SummaryView from '../summary_views/CIE2SummaryView'
+import CIM2SummaryView from '../summary_views/CIM2SummaryView'
 
-import CIExCIM2SummaryView from '../summary_views/CIExCIM2SummaryView.jsx'
-import CIR2xCIESummaryView from '../summary_views/CIR2xCIESummaryView.jsx'
-import CIPxCIESummaryView from '../summary_views/CIPxCIESummaryView.jsx'
+import CIExCIM2SummaryView from '../summary_views/CIExCIM2SummaryView'
+import CIR2xCIESummaryView from '../summary_views/CIR2xCIESummaryView'
+import CIPxCIESummaryView from '../summary_views/CIPxCIESummaryView'
 
 const { TextArea } = Input;
 
-export default class ProposalSummaryView extends React.Component {
+import {ProposalInputData} from "./PruProposalApp"
+
+export interface PruPlanDisplaySetting {
+	proposalName,
+	fxRate,
+	currency,
+	ANB,
+	fullDataDisplay
+}
+
+export default class ProposalSummaryView extends React.Component<ProposalInputData> {
 
 	render() {
+
+		console.log(this.props.proposalData);
 
 		if (!this.props.proposalData) {
 			return (<div></div>)
@@ -135,7 +147,8 @@ export default class ProposalSummaryView extends React.Component {
 
 		let props = parser.parse();
 
-		Object.assign(props, {
+		return React.createElement(view, {
+			dataset: props,
 			display: {
 				proposalName,
 				fxRate,
@@ -144,12 +157,11 @@ export default class ProposalSummaryView extends React.Component {
 				fullDataDisplay
 			}
 		});
-
-		return React.createElement(view, props);
 	}
 }
 
-function inputStringToData(input) {
+function inputStringToData(input:string) {
+
 	var buf = input.split("\n");
 
 	var data = [];

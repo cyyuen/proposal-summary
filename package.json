@@ -14,17 +14,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "antd": "^3.16.2",
-    "babel-plugin-import": "^1.11.0",
+    "antd": "^3.26.18",
+    "babel-plugin-import": "^1.13.0",
     "babel-plugin-inline-import": "^3.0.0",
     "dom-to-image": "^2.6.0",
-    "file-saver": "^2.0.0",
-    "next": "^7.0.3",
+    "file-saver": "^2.0.2",
     "pdf-table-extractor": "^1.0.3",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "ts-loader": "^8.0.0"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "@types/node": "^14.0.22",
+    "@types/react": "^16.9.43",
+    "mocha": "^5.2.0",
+    "next": "^9.4.4",
+    "typescript": "^3.9.6"
   }
 }

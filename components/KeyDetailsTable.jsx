@@ -6,7 +6,7 @@ const TabPane = Tabs.TabPane;
 import {
   CARD_BORDER_COLOR, 
   PRU_COLOR
-} from '../constants.js';
+} from '../constants';
 
 const gridStyle = {
   width: '25%',

@@ -1,10 +1,11 @@
-import React from 'react';
-import PruBaseSummaryView from './PruBaseSummaryView.jsx'
+import * as React from 'react';
+import PruBaseSummaryView from './PruBaseSummaryView'
+import {PruSummaryProps} from './PruBaseSummaryView'
 
 import {
 	displayAgeYearString
 
-} from './utils.js'
+} from './utils'
 
 import {
 	Tag,
@@ -14,22 +15,28 @@ import {
 	Divider
 } from 'antd'
 
-export default class PruCCSummaryView extends PruBaseSummaryView {
+import {PruCCDataset, PruCCDataLine} from "../Dataset"
 
-	/**
-	@override
-	*/
-	getPlanname() {
+export interface PruCCSummaryProps extends PruSummaryProps {
+	dataset: PruCCDataset
+}
 
+export default abstract class PruCCSummaryView extends PruBaseSummaryView<PruCCSummaryProps> {
+
+	getProposalHighlights(): [{ content: any; icon: any; }] {
+		throw new Error("Method not implemented.");
 	}
 
+	abstract getPlanname():string
+	abstract getDiseaseNum(): number
+	abstract getClaimNum(): number
+	
 	renderHighlight() {
-
 		const {
 			totalFreeInsuredYears,
 			basicInsured,
 			freeInsured
-		} = this.props.summary;
+		} = this.props.dataset.summary;
 
 		return (
 			<Row align="middle" style={{padding: "15px 0px 25px 0px"}}>
@@ -46,8 +53,8 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 		)
 	}
 
-	getDetailTableColumns() {
 
+	getDetailTableColumns() {
 		const columns = [{
 			  title: 'A:年期/岁数',
 			  dataIndex: 'ANB',
@@ -78,8 +85,8 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 				dataIndex: 'cashValue',
 				key: 'cashValue',
 				align: "center",
-				render: (number, record) => {
-					return <div> {this.toCurrencyNumber(number)} <Tag color="blue">{parseFloat(record.cashValueGearing * 100).toFixed(2)+"%"}</Tag> </div>
+				render: (number, record: PruCCDataLine) => {
+					return <div> {this.toCurrencyNumber(number)} <Tag color="blue">{(record.totalYield * 100).toFixed(2)+"%"}</Tag> </div>
 			}
 		}];
 
@@ -100,52 +107,12 @@ export default class PruCCSummaryView extends PruBaseSummaryView {
 		)
 	}
 
-	getDetailTableDataSource() {
-		const {
-			details
-		} = this.props;
+	getDetailTableDataSource(): PruCCDataLine[] {
+		const dataset = this.props.dataset;
 
-		const  { totalPremiun } = this.props.summary;
+		console.log("Get dataset from PruCCSummaryView");
+		console.log(dataset);
 
-		const year1 = details[0];
-		const year11 = details[10];
-		const year20 = details[19];
-		const year25 = details[20];
-		const year30 = details[21];
-
-
-		attachGearing(year1);
-		attachGearing(year11);
-		attachGearing(year20);
-		attachGearing(year25);
-		attachGearing(year30);
-
-		const keyYearDetails = [
-			year1,
-			year11,
-			year20,
-			year25,
-			year30
-		];
-
-		for (let i = 0, len = details.length; i != len; ++i) {
-			switch (details[i].ANB) {
-				case 66:
-				case 86:
-				case 101:
-					if (details[i].ANB > year30.ANB) {
-						attachGearing(details[i]);
-						keyYearDetails.push(details[i]);
-					};
-					break
-			} 
-		}
-
-		return keyYearDetails;
+		return dataset.getDataLinesInEvery10Years();
 	}
-}
-
-function attachGearing(detail) {
-	detail.cashValueGearing = detail.cashValue / detail.accumulatePremiun;
-	detail.totalInsuredGearing = detail.totalInsured / detail.accumulatePremiun;
 }

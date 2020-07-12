@@ -1,4 +1,4 @@
-import PruParser from "./PruParser.js"
+import PruParser from "./PruParser"
 
 class PLP2CashValueParser extends PruParser {
 

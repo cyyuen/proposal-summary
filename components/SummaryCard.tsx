@@ -1,19 +1,31 @@
 import { Divider, Row, Col, Tag, Tabs } from 'antd';
-import React from 'react';
+import * as React from 'react';
 
 const TabPane = Tabs.TabPane;
 
 import {
   CARD_BORDER_COLOR, 
   PRU_COLOR
-} from '../constants.js';
+} from '../constants';
 
 const gridStyle = {
   width: '25%',
   textAlign: 'center',
 };
 
-export default class SummaryCard extends React.Component {
+interface SummaryCardProps {
+  proposalName: any,
+  ANB: any,
+  premiun: any,
+  currency: any,
+  fxRate: any,
+  totalPaymentYear: any,
+  totalPremiun: any,
+  children: any,
+  cardID: any
+}
+
+export default class SummaryCard extends React.Component<SummaryCardProps> {
   render() {
 
     const {
@@ -35,7 +47,7 @@ export default class SummaryCard extends React.Component {
       color: "white",
       backgroundColor: PRU_COLOR,
       fontSize: "16px",
-      textAlign: "center"
+      textAlign: "center" as "center"
     }
 
     const borderStyle = "1px solid " + CARD_BORDER_COLOR;

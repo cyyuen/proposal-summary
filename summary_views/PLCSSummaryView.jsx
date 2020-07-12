@@ -1,5 +1,5 @@
 import React from 'react';
-import PruBaseSummaryView from './PruBaseSummaryView.jsx'
+import PruBaseSummaryView from './PruBaseSummaryView'
 
 export default class EGSP2AccSummaryView extends PruBaseSummaryView {
 

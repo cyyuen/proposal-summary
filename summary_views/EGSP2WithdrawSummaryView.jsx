@@ -1,5 +1,5 @@
 import React from 'react';
-import PruBaseSummaryView from './PruBaseSummaryView.jsx'
+import PruBaseSummaryView from './PruBaseSummaryView'
 
 const NEXT_TIMESLOT_REACH_END = "reachTimeslotEnd";
 
@@ -17,13 +17,13 @@ import {
 
 import {
 	displayAgeYearString
-} from './utils.js'
+} from './utils'
 
 import {
 	INSURANCE_ICON,
 	DOLLAR_ICON,
 	CLUSTER_ICON
-} from '../constants.js'
+} from '../constants'
 
 export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 
@@ -48,7 +48,10 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 	getScriptEnding(details) {
 		const remainingValue = details[details.length - 1].remainingValue;
 
-		return `当客户百岁时，账户里还会有${this.toCurrencyFormat(remainingValue)}传承给子孙，实现财富传承，富过三代。`
+		return `当客户百岁时，账户里还会有${this.toCurrencyFormat(remainingValue)}传承给子孙，实现财富传承，富过三代。
+
+		越晚开始提取，每年可以提取的资金越多。具体开始提取的年份可以由客户自由决定。
+		`
 	}
 
 	generateTimeslotScript(timeslot) {
@@ -61,7 +64,7 @@ export default class EGSP2WithdrawSummaryView extends PruBaseSummaryView {
 				totalYears
 		} = timeslot;
 
-		return `从${startANB}岁(${startYear}年后)开始，每年提取${this.toCurrencyFormat(withdrawValueEachYear)}，一直提取到${endANB}岁。${totalYears}年里，一共提取${this.toCurrencyFormat(totalWithdraw)}`
+		return `假设从${startANB - 1}岁(${startYear}年后)开始提取，每年可以提取${this.toCurrencyFormat(withdrawValueEachYear)}，一直提取到${endANB - 1}岁。${totalYears}年里，一共提取${this.toCurrencyFormat(totalWithdraw)}`
 	}
 
 	getScript() {

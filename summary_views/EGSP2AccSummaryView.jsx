@@ -1,5 +1,5 @@
 import React from 'react';
-import PruBaseSummaryView from './PruBaseSummaryView.jsx'
+import PruBaseSummaryView from './PruBaseSummaryView'
 
 import {
 	Tag
@@ -7,13 +7,13 @@ import {
 
 import {
 	displayAgeYearString
-} from './utils.js'
+} from './utils'
 
 import {
 	INSURANCE_ICON,
 	DOLLAR_ICON,
 	CLUSTER_ICON
-} from '../constants.js'
+} from '../constants'
 
 export default class EGSP2AccSummaryView extends PruBaseSummaryView {
 
@@ -91,8 +91,8 @@ export default class EGSP2AccSummaryView extends PruBaseSummaryView {
 		for (let i = 0, len = details.length; i != len; ++i) {
 
 			switch (details[i].ANB) {
-				case 66:
-				case 86:
+				case 61:
+				case 81:
 				case 101:
 					if (details[i].ANB > year20.ANB) {
 						highlightDetails.push(details[i]);
@@ -134,8 +134,8 @@ function pickKeyYearDetails(details) {
 
 	for (let i = 0, len = details.length; i != len; ++i) {
 		switch (details[i].ANB) {
-			case 66:
-			case 86:
+			case 61:
+			case 81:
 			case 101:
 				if (details[i].ANB > year30.ANB) {
 

@@ -1,4 +1,4 @@
-import PruParser from "./PruParser.js"
+import PruParser from "./PruParser"
 
 export default class EGSP2WithdrawParser extends PruParser {
 

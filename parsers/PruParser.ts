@@ -1,3 +1,5 @@
+import {PruPlanDataset, PruPlanDataLine} from "../Dataset"
+
 /**
 	Basic Pru Proposal Parser
 
@@ -9,26 +11,14 @@
 	The fields below are per-proposal base:
 	1. plan details
 */
-export default class PruParser {
-	constructor(ANB, data) {
+export default abstract class PruParser {
+
+	constructor(public ANB, public data: string[][]) {
 		this.ANB = ANB;
 		this.data = data;
 	}
 
-	/**
-		@return {
-			summary: {
-				ANB,
-				premiun,
-				totalPaymentYear,
-				totalPremiun
-			},
-			details: {
-				[Pre-proposal based details]
-			}
-		}
-	*/
-	parse() {
+	parse(): PruPlanDataset {
 		let parsedDetails = [];
 		let ANBandYear = null;
 
@@ -63,19 +53,15 @@ export default class PruParser {
 				}
 			}
 
-
 			parsedDetails[i] = this.parseDataLine(ANBandYear.ANB, ANBandYear.year, accumulatePremiun, this.data[i], lastParsedDataline);
 		}
 
-		return {
-			summary: {
-				ANB: this.ANB,
-				totalPaymentYear: totalPaymentYear,
-				premiun: premiun,
-				totalPremiun: totalPremiun
-			},
-			details: parsedDetails
-		}
+		return new PruPlanDataset({
+			ANB: this.ANB,
+			totalPaymentYear: totalPaymentYear,
+			premiun: premiun,
+			totalPremiun: totalPremiun
+		}, parsedDetails)
 	}
 
 	/**
@@ -93,15 +79,13 @@ export default class PruParser {
 			...{other pre-proposal based details}
 		}
 	*/
-	parseDataLine(ANB, year, accumulatePremiun, dataline, lastParsedDataline) {
+	abstract parseDataLine(ANB: number, year: number, accumulatePremiun: number, dataline: string[], lastParsedDataline: string[]): PruPlanDataLine
 
-	}
-
-	dataNumStringToNumber(numString) {
+	dataNumStringToNumber(numString:string): number {
 		return parseInt(numString.replace(/,/g,""));
 	}
 
-	numberToLocalString(number) {
+	numberToLocalString(number: number):string {
 		return number.toLocaleString();
 	}
 

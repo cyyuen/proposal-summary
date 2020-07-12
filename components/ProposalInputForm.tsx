@@ -6,21 +6,24 @@ import {
 	Button, 
 	Checkbox 
 } from 'antd';
-import { Row, Col } from 'antd';
-import React from 'react';
+import * as React from 'react';
+import { FormComponentProps } from "antd/lib/form/Form";
+
+interface PruFormComponentProps extends FormComponentProps {
+	onSubmit: (arg0: any) => void
+}
 
 const { TextArea } = Input;
 const { Option } = Select;
 
-class ProposalInputForm extends React.Component {
 
-	handleSubmit = (e) => {
+class ProposalInputForm extends React.Component<PruFormComponentProps> {
+
+	handleSubmit = (e: { preventDefault: () => void; }) => {
 	    e.preventDefault();
 
 	    this.props.form.validateFields((err, values) => {
 	      if (!err) {
-
-
 	        this.props.onSubmit(values);
 	      }
 	    });

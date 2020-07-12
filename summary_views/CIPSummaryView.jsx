@@ -21,7 +21,7 @@ export default class CIPSummaryView extends PruCCSummaryView {
 			basicInsured,
 			freeInsured,
 			ANB
-		} = this.props.summary;
+		} = this.props.dataset.summary;
 
 		const firstYearAssured = basicInsured + freeInsured;
 

@@ -24,7 +24,7 @@ export interface PruSummaryProps {
 	display: PruPlanDisplaySetting
 }
 
-export default abstract class PruBaseSummaryView<T extends PruSummaryProps> extends React.Component<T> {
+export default abstract class PruBaseSummaryView<T extends PruSummaryProps = PruSummaryProps> extends React.Component<T> {
 
 	/**
 	 to be overrided by subclasses

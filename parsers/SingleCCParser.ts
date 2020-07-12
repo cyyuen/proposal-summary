@@ -11,7 +11,7 @@ export default class SingleCCParser extends PruParser {
 	protected ct2Premiun:number
 	protected ct2PaymentPeriod: number
 
-	constructor(ANB, data, ct2Assured, ct2Premiun, ct2PaymentPeriod) {
+	constructor(ANB: number, data: string[][], ct2Assured: string, ct2Premiun: string, ct2PaymentPeriod: string) {
 		super(ANB, data);
 		this.totalFreeInsuredYears = 0;
 
@@ -32,7 +32,7 @@ export default class SingleCCParser extends PruParser {
 		}, parsedData.details);
 	}
 
-	parseDataLine(ANB, year, accumulatePremiun, dataline, lastParsedDataline): PruCCDataLine {
+	parseDataLine(ANB: number, year: number, accumulatePremiun: number, dataline: string[], lastParsedDataline: PruCCDataLine|null): PruCCDataLine {
 
 		const basicInsured = this.dataNumStringToNumber(dataline[5]);
 		const freeInsured = this.dataNumStringToNumber(dataline[6]);

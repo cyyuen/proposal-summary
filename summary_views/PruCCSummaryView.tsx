@@ -110,9 +110,6 @@ export default abstract class PruCCSummaryView extends PruBaseSummaryView<PruCCS
 	getDetailTableDataSource(): PruCCDataLine[] {
 		const dataset = this.props.dataset;
 
-		console.log("Get dataset from PruCCSummaryView");
-		console.log(dataset);
-
 		return dataset.getDataLinesInEvery10Years();
 	}
 }

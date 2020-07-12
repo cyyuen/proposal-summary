@@ -13,13 +13,15 @@ import {PruPlanDataset, PruPlanDataLine} from "../Dataset"
 */
 export default abstract class PruParser {
 
-	constructor(public ANB, public data: string[][]) {
+	constructor(public ANB: number, public data: string[][]) {
 		this.ANB = ANB;
 		this.data = data;
+
+		return this
 	}
 
-	parse(): PruPlanDataset {
-		let parsedDetails = [];
+	parse(): PruPlanDataset{
+		let parsedDetails:PruPlanDataLine[] = [];
 		let ANBandYear = null;
 
 		let totalPaymentYear = 0;
@@ -33,7 +35,7 @@ export default abstract class PruParser {
 
 			const accumulatePremiun = this.dataNumStringToNumber(this.data[i][1]);
 
-			let lastParsedDataline = null;
+			let lastParsedDataline:PruPlanDataLine | null = null;
 
 			/**
 			The premiun will be increased in the beginning &
@@ -79,9 +81,9 @@ export default abstract class PruParser {
 			...{other pre-proposal based details}
 		}
 	*/
-	abstract parseDataLine(ANB: number, year: number, accumulatePremiun: number, dataline: string[], lastParsedDataline: string[]): PruPlanDataLine
+	abstract parseDataLine(ANB: number, year: number, accumulatePremiun: number, dataline: string[], lastParsedDataline: PruPlanDataLine|null): PruPlanDataLine
 
-	dataNumStringToNumber(numString:string): number {
+	dataNumStringToNumber(numString:string): number {		
 		return parseInt(numString.replace(/,/g,""));
 	}
 
@@ -89,7 +91,7 @@ export default abstract class PruParser {
 		return number.toLocaleString();
 	}
 
-	extractAgeAndYear(data) {
+	extractAgeAndYear(data: string[]) {
 		/**
 		 parsing format @ANB {XX}岁
 		 */

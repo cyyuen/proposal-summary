@@ -28,7 +28,7 @@ export interface ProposalInputData {
 export default class PruProposalApp extends React.Component<ProposalInputData, ProposalInputData> {
   constructor(props: Readonly<ProposalInputData>) {
     super(props);
-    this.state = {proposalData: null};
+    this.state = {proposalData: undefined};
     this.onProposalInputSubmitted = this.onProposalInputSubmitted.bind(this);
   }
 

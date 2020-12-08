@@ -2,16 +2,19 @@ interface PruPlanSummary {
     ANB: number,
     premiun: number,
     totalPaymentYear: number,
-    totalPremiun:number 
+    totalPremiun:number
 }
 
-export interface PruPlanDataLine {
-	ANB: number,
+export interface PruPlanDataLine extends PruRawDataLine {
+    ANB: number,
     year: number,
     // 累计保费
     accumulatePremiun: number,
-    cashValue: number,
-    totalYield: number 
+    cashValue: number
+    totalYield: number,
+    cashflow: number[],
+    irr: number,
+    singleRate: number
 }
 
 export class PruPlanDataset {
@@ -78,10 +81,10 @@ export interface PruCCDataLine extends PruPlanDataLine {
 
     // 赠送保额
     freeInsured: number,
-    
+
     // 现金价值
     cashValue: number,
-    
+
     // 总保额
     totalInsured: number,
 

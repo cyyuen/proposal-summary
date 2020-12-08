@@ -28,7 +28,7 @@ import { PruCCDataset } from '../Dataset'
 
 class SummaryViewGenerator<TParser extends PruParser = any, TView extends PruBaseSummaryView = any> {
     constructor(
-        public readonly ParserClass: (new (...args: any[]) => TParser), 
+        public readonly ParserClass: (new (...args: any[]) => TParser),
         public readonly ViewClass: new (...args: any[]) => TView
     ){}
 }
@@ -45,4 +45,9 @@ export const config: {[id: string] : SummaryViewConfig;} = {
         isWithCCTerm: true,
         isWith2ndData: false
     },
+    "egsp2-acc": {
+        generator: new SummaryViewGenerator(EGSP2AccParser, EGSP2AccSummaryView),
+        isWithCCTerm: true,
+        isWith2ndData: false
+    }
 }

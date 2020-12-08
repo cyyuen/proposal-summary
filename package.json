@@ -19,6 +19,7 @@
     "babel-plugin-inline-import": "^3.0.0",
     "dom-to-image": "^2.6.0",
     "file-saver": "^2.0.2",
+    "node-irr": "^2.0.3",
     "pdf-table-extractor": "^1.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

@@ -1,4 +1,5 @@
 import {PruPlanDataset, PruPlanDataLine} from "../Dataset"
+const { irr } = require('node-irr')
 
 /**
 	Basic Pru Proposal Parser
@@ -7,7 +8,7 @@ import {PruPlanDataset, PruPlanDataLine} from "../Dataset"
 	1. Premiun per year
 	2. Total premiun
 	3. Total Payment years
-	
+
 	The fields below are per-proposal base:
 	1. plan details
 */
@@ -26,7 +27,7 @@ export default abstract class PruParser {
 
 		let totalPaymentYear = 0;
 		let totalPremiun = 0;
- 
+
 		const premiun = this.dataNumStringToNumber(this.data[0][1]);
 
 		for (let i = 0, len = this.data.length; i != len; i++) {
@@ -51,11 +52,21 @@ export default abstract class PruParser {
 				*/
 				if (accumulatePremiun > accumulatePremiunLastYear && ANBandYear.isYearOnlyColumn ) {
 					totalPaymentYear = ANBandYear.year;
-					totalPremiun = accumulatePremiun;	
+					totalPremiun = accumulatePremiun;
 				}
 			}
 
-			parsedDetails[i] = this.parseDataLine(ANBandYear.ANB, ANBandYear.year, accumulatePremiun, this.data[i], lastParsedDataline);
+			const parsedDataLine = this.parseDataLine(ANBandYear.ANB, ANBandYear.year, accumulatePremiun, this.data[i], lastParsedDataline);
+
+			parsedDataLine.totalYield = parsedDataLine.cashValue / parsedDataLine.accumulatePremiun;
+
+			parsedDataLine.cashflow = this.generateCashflowArray(premiun, ANBandYear.year, totalPaymentYear, parsedDataLine.cashValue);
+
+			parsedDataLine.irr = irr(parsedDataLine.cashflow);
+
+			parsedDataLine.singleRate = (parsedDataLine.cashValue - totalPremiun) / totalPremiun / ANBandYear.year;
+
+			parsedDetails[i] = parsedDataLine;
 		}
 
 		return new PruPlanDataset({
@@ -64,6 +75,22 @@ export default abstract class PruParser {
 			premiun: premiun,
 			totalPremiun: totalPremiun
 		}, parsedDetails)
+	}
+
+	generateCashflowArray(premiun: number, year: number, totalPaymentYear: number, cashValue: number): number[] {
+			let cashflow = [], i = 0;
+
+			while (i < totalPaymentYear) {
+				cashflow[i++] = -1 * premiun;
+			}
+
+			while (i < year) {
+				cashflow[i++] = 0;
+			}
+
+			cashflow[i] = cashValue;
+
+			return cashflow;
 	}
 
 	/**
@@ -75,15 +102,15 @@ export default abstract class PruParser {
 		@param lastParsedDataline
 
 		@return data line {
-			ANB: 
+			ANB:
 			premiun:
-			totalPremiun: 
+			totalPremiun:
 			...{other pre-proposal based details}
 		}
 	*/
 	abstract parseDataLine(ANB: number, year: number, accumulatePremiun: number, dataline: string[], lastParsedDataline: PruPlanDataLine|null): PruPlanDataLine
 
-	dataNumStringToNumber(numString:string): number {		
+	dataNumStringToNumber(numString:string): number {
 		return parseInt(numString.replace(/,/g,""));
 	}
 
@@ -96,7 +123,7 @@ export default abstract class PruParser {
 		 parsing format @ANB {XX}岁
 		 */
 		if (data[0] === "@ANB") {
-			// remove the last charater '岁' 
+			// remove the last charater '岁'
 			// by extracting the first 2 charater
 			var ANB = parseInt(data[1].substr(0,2));
 

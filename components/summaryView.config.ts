@@ -15,6 +15,7 @@ import CIPSummaryView from '../summary_views/CIPSummaryView'
 import CIR2SummaryView from '../summary_views/CIR2SummaryView'
 import CIESummaryView from '../summary_views/CIESummaryView'
 import CIE2SummaryView from '../summary_views/CIE2SummaryView'
+import CIE3SummaryView from '../summary_views/CIE3SummaryView'
 import CIM2SummaryView from '../summary_views/CIM2SummaryView'
 
 import CIExCIM2SummaryView from '../summary_views/CIExCIM2SummaryView'
@@ -42,6 +43,11 @@ interface SummaryViewConfig {
 export const config: {[id: string] : SummaryViewConfig;} = {
     "cie2": {
         generator: new SummaryViewGenerator(SingleCCParser, CIE2SummaryView),
+        isWithCCTerm: true,
+        isWith2ndData: false
+    },
+    "cie3": {
+        generator: new SummaryViewGenerator(SingleCCParser, CIE3SummaryView),
         isWithCCTerm: true,
         isWith2ndData: false
     },

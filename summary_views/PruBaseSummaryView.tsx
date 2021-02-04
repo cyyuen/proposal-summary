@@ -76,6 +76,9 @@ export default abstract class PruBaseSummaryView<T extends PruSummaryProps = Pru
 
 	abstract getDetailTableDataSource(): any[]
 
+	/**
+	 * Helper functions
+	 */
 	getCurrency() {
 		return this.props.display.currency;
 	}
@@ -102,6 +105,35 @@ export default abstract class PruBaseSummaryView<T extends PruSummaryProps = Pru
 		}
 
 		return Math.ceil(total).toLocaleString();
+	}
+
+
+	getDetailByANB(ANB: number) {
+		const details = this.props.dataset.details;
+
+		for (let index = 0; index < details.length; index++) {
+			const detail = details[index];
+			
+			if (detail.ANB === ANB) {
+				return detail;
+			}
+		}
+
+		return null;
+	}
+
+	getDetailByYear(year: number) {
+		const details = this.props.dataset.details;
+
+		for (let index = 0; index < details.length; index++) {
+			const detail = details[index];
+			
+			if (detail.year === year) {
+				return detail;
+			}
+		}
+
+		return null;
 	}
 
 	downloadSummaryCard = () => {

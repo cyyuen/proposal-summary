@@ -55,7 +55,7 @@ export default abstract class PruBaseSummaryView<T extends PruSummaryProps = Pru
 		)
 	}
 
-	createHighlight(content, icon) {
+	createHighlight(content: any, icon: any) {
 		return {
 			content,
 			icon
@@ -70,7 +70,7 @@ export default abstract class PruBaseSummaryView<T extends PruSummaryProps = Pru
 		icon: xxxx
 	}]
 	*/
-	abstract getProposalHighlights(): [{content, icon}]
+	abstract getProposalHighlights(): [{content: any, icon: any}]
 
 	abstract getDetailTableColumns() : any[]
 
@@ -83,7 +83,7 @@ export default abstract class PruBaseSummaryView<T extends PruSummaryProps = Pru
 		return this.props.display.currency;
 	}
 
-	toCurrencyFormat(number) {
+	toCurrencyFormat(number: number) {
 		const {
 			currency,
 		} = this.props.display;
@@ -91,7 +91,7 @@ export default abstract class PruBaseSummaryView<T extends PruSummaryProps = Pru
 		return this.toCurrencyNumber(number) + " " + currency;
 	}
 
-	toCurrencyNumber(number) {
+	toCurrencyNumber(number: number) {
 		const {
 			fxRate,
 		} = this.props.display;
@@ -147,10 +147,10 @@ export default abstract class PruBaseSummaryView<T extends PruSummaryProps = Pru
 		} = this.props.display;
 
 		domtoimage.toBlob(summary)
-    		.then(function (blob) {
+    		.then(function (blob: any) {
     			return saveAs(blob, proposalName + ".png");
     		})
-    		.catch(function (error) {
+    		.catch(function (error: any) {
         		console.error('oops, something went wrong!', error);
     		});
 	}

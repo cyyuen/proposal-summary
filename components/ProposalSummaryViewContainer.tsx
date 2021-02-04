@@ -8,7 +8,7 @@ import PruParser from '../parsers/PruParser';
 
 export interface PruPlanDisplaySetting {
 	proposalName: string,
-	fxRate: string,
+	fxRate: number,
 	currency: string,
 	ANB: string,
 	fullDataDisplay: boolean

@@ -11,6 +11,8 @@ import {
 	Divider
 } from 'antd'
 
+import {PruCCDataLine} from '../Dataset'
+
 export default class CIE3SummaryView extends PruCCSummaryView {
 
 	getClaimNum() {
@@ -33,18 +35,18 @@ export default class CIE3SummaryView extends PruCCSummaryView {
 			totalPremiun
 		} = this.props.dataset.summary;
 
-		const ANB66 = this.getDetailByANB(66);
-		const ANB81 = this.getDetailByANB(81);
+		const ANB66 = this.getDetailByANB(66) as PruCCDataLine;
+		const ANB81 = this.getDetailByANB(81) as PruCCDataLine;
 
 		return `
-		CIE 3，保诚主打的抗癌神器，针对癌症这一款产品就足够了。癌症最高理赔基础保额660%：
+		CIE 3，保诚主打的抗癌神器，针对癌症这一款产品就足够了。
+
+		当客户不幸罹患癌症，公司将提供最长持续9年的理赔。即除了确诊当年可获得一大笔理赔外，后续的8年，若病症持续，则每年都会从公司得到一笔理赔。
+		
+		癌症最高理赔基础保额660%：
 		配置${this.toCurrencyFormat(basicInsured)}的基础保额；
 		癌症治疗可享受最高${this.toCurrencyFormat(basicInsured * 6.6)}的保障。
 		
-		配合安心医海外医疗意见，亲子保费豁免等服务，提供从入院前到治疗的全周期重疾保障方案。
-
-		安心医：专业个性化海外医疗咨询服务，当客户不幸患病，我们提供一站式专业医疗咨询服务，由语言相同的专业注册医生提供医疗咨询服务。同时安排最合适的海外医生并安排预约和医疗翻译服务。
-
 		我们为117种病况提供保障，令您倍添安心，而常见的病况 如癌症、心脏病发作或中风等也列入受保障范围内。
 
 		重大疾病保险的模式是有事赔钱，没事当存钱。
@@ -121,7 +123,7 @@ export default class CIE3SummaryView extends PruCCSummaryView {
 				    
 				</Row>
 				<Row gutter={16}>
-				<Col span={8}>
+					<Col span={8}>
 				      <Statistic
 				      	title="癌症9次额外理赔(660%)："
 				      	value={this.toCurrencyFormat(basicInsured * 6.6).split(" ")[0]}

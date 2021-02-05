@@ -1,0 +1,174 @@
+import PruCCSummaryView from './PruCCSummaryView'
+import {
+	Tag,
+	Timeline,
+	Card,
+	Statistic, 
+	Row, 
+	Col, 
+	Icon,
+	Table,
+	Divider
+} from 'antd'
+
+import {PruMixedCCDataset, PruCCDataLine} from "../Dataset"
+
+export default class CIPxCIE3SummaryView extends PruCCSummaryView {
+
+	getClaimNum() {
+		return 11;
+	}
+
+	getPlanname() {
+		return "CIE 3";
+	}
+
+	getDiseaseNum() {
+		return 117;
+	}
+
+	getScript() {
+		const dataset = this.props.dataset as PruMixedCCDataset;
+
+		const {
+			totalFreeInsuredYears,
+			basicInsured,
+			freeInsured,
+			totalPremiun
+		} = dataset.summary;
+
+		const plan2 = dataset.plan2dataset;
+
+		const ANB66 = this.getDetailByANB(66) as PruCCDataLine;
+		const ANB81 = this.getDetailByANB(81) as PruCCDataLine;
+
+		return `
+		CIE 3，保诚主打的抗癌神器，针对癌症这一款产品就足够了。
+
+		当客户不幸罹患癌症，公司将提供最长持续9年的理赔。即除了确诊当年可获得一大笔理赔外，后续的8年，若病症持续，则每年都会从公司得到一笔理赔。
+		
+		癌症最高理赔基础保额660%：
+		配置${this.toCurrencyFormat(basicInsured)}的基础保额；
+		癌症治疗可享受最高${this.toCurrencyFormat(plan2.summary.basicInsured * 6.6)}的保障。
+		
+		我们为117种病况提供保障，令您倍添安心，而常见的病况 如癌症、心脏病发作或中风等也列入受保障范围内。
+
+		重大疾病保险的模式是有事赔钱，没事当存钱。
+
+		① 有事赔钱：
+		如果客户不幸得了保障表里的重大疾病或者身故，公司将一次性赔付一大笔保额让客户接受最好的治疗以及补足因重疾带来的资金缺口。
+
+		与内地不同，香港重疾理赔金额是逐年递增的。因为公司前${totalFreeInsuredYears}年赠送50%的基础保额。
+		所以在第一年的时候，客户就会有${this.toCurrencyFormat(basicInsured + freeInsured)}的保障。并且保额逐年递增，可以有非常好的抗通胀能力。
+
+		到了真正大概率会用到的时候，比如65岁时，内地赔出来的还是${this.toCurrencyFormat(basicInsured)}。中间过去了${ANB66.year}年，那时候的${this.toCurrencyFormat(basicInsured)}已经贬值了，
+		而香港则增值到${this.toCurrencyFormat(ANB66.totalInsured)}。
+
+		② 没事理财：
+		当然，我们最希望的是客户不需要用到理赔款。所以，如果客户到，比如说70多80岁，客户可以选择退保，不要这个保障了。直接把钱拿回来。
+
+		与内地不同，香港重疾的退保金额是逐年递增的。内地一共交了${this.toCurrencyFormat(totalPremiun)}：
+		假设在80岁(${ANB81.year}年后)，可以拿回来的钱只比${this.toCurrencyFormat(totalPremiun)}多一点。
+		而香港可以拿回来的则是${this.toCurrencyFormat(ANB81.cashValue)}。
+
+		收益率大概是2-3%，相当于把一部分在银行存的资金放到保险公司里，有增值保值的同时，还能多一个保障。
+
+		具体各年份的数据可以看下面的图片哦。
+		`;
+	}
+
+	renderHighlight() {
+
+		const dataset = this.props.dataset as PruMixedCCDataset;
+
+		const {
+			totalFreeInsuredYears,
+			basicInsured,
+			freeInsured,
+		} = dataset.summary;
+
+		const plan2 = dataset.plan2dataset;
+
+		const firstYearAssured = basicInsured + freeInsured;
+
+		return (
+			<div>
+			<Tag color="blue">"单次理赔 & 多次理赔"组合方案:</Tag>
+			<div style={{"margin-top": "10px"}}>
+					
+			<Row gutter={16}>
+				    <Col span={8}>
+				      <Statistic 
+				      	title={"起始保额(" + this.toCurrencyFormat(firstYearAssured).split(" ")[1] + ")"} 
+				      	value={this.toCurrencyFormat(firstYearAssured).split(" ")[0]}
+				      	valueStyle={{
+				      		"color": "rgb(154, 29, 73)",
+    						"font-size": "30px"
+				      	}}
+				    />
+				    </Col>
+				    <Col span={8}>
+				      <Statistic 
+				      	title={"涵盖病种"} 
+				      	value={this.getDiseaseNum()}
+				      	valueStyle={{
+				      		"color": "rgb(154, 29, 73)",
+    						"font-size": "30px"
+				      	}}
+				      />
+				    </Col>
+				    <Col span={8}>
+				      <Statistic
+				      	title="安心医"
+				      	value={"海外医疗"}
+
+				      	valueStyle={{
+				      		"color": "rgb(154, 29, 73)",
+    						"font-size": "30px"
+				      	}}
+				      />
+				    </Col>
+				</Row>    
+				<Row gutter={16}>
+					<Col span={8}>
+				      <Statistic
+				      	title="癌症9次额外理赔(660%)："
+				      	value={this.toCurrencyFormat(plan2.summary.basicInsured * 6.6).split(" ")[0]}
+				      	valueStyle={{
+				      		"color": "rgb(154, 29, 73)",
+    						"font-size": "30px"
+				      	}}
+				      />
+				    </Col>
+				    <Col span={8}>
+				      <Statistic
+				      	title="癌症持续理赔"
+				      	value={"长达9年"}
+				      	valueStyle={{
+				      		"color": "rgb(154, 29, 73)",
+    						"font-size": "30px"
+				      	}}
+				      />
+				    </Col>
+				    <Col span={8}>
+				      <Statistic
+				      	title="心脏病/中风2次额外理赔："
+				      	value={this.toCurrencyFormat(plan2.summary.basicInsured * 2).split(" ")[0]}
+				      	valueStyle={{
+				      		"color": "rgb(154, 29, 73)",
+    						"font-size": "30px"
+				      	}}
+				      />
+				    </Col>
+			  </Row>
+			</div>
+			  <Divider />
+			  <p style={{textAlign: 'center', marginTop: "-20px"}}>
+			  	基本重疾保额{this.toCurrencyFormat(basicInsured)} | 前{totalFreeInsuredYears}赠送的重疾保额{this.toCurrencyFormat(freeInsured)}
+			  </p>
+			  <p> 多次癌症理赔模式 </p>
+			  <img src=""></img>				  
+			</div>
+		)
+	}
+}

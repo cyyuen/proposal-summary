@@ -121,9 +121,8 @@ class ProposalInputForm extends React.Component<PruFormComponentProps> {
 		              <Option value="cim2"> CIM2 </Option>
 
 		              <Option value="cip+cie"> CIP & CIE混合方案</Option>
-
+		              <Option value="cipxcie3"> CIP & CI3混合方案</Option>
 		              <Option value="cir2+cie"> CIR2 & CIE混合方案</Option>
-
 		              <Option value="cie+cim2"> CIE & CIM2混合方案 (In progress) </Option>
 		              
 		              <Option value="plcs">PLCS (In progress)</Option>

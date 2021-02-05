@@ -15,7 +15,7 @@ const YI = 100000000
 
 const CARD_ID = "summary-card-id";
 
-import {PruPlanDataset} from "../Dataset"
+import {PruCCDataLine, PruPlanDataset} from "../Dataset"
 
 import {PruPlanDisplaySetting} from "../components/ProposalSummaryViewContainer"
 
@@ -119,7 +119,7 @@ export default abstract class PruBaseSummaryView<T extends PruSummaryProps = Pru
 			}
 		}
 
-		return null;
+		throw "ANB " + ANB + " is invalid";
 	}
 
 	getDetailByYear(year: number) {
@@ -133,7 +133,7 @@ export default abstract class PruBaseSummaryView<T extends PruSummaryProps = Pru
 			}
 		}
 
-		return null;
+		throw "year " + year + " is invalid";
 	}
 
 	downloadSummaryCard = () => {

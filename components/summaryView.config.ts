@@ -18,6 +18,7 @@ import CIE2SummaryView from '../summary_views/CIE2SummaryView'
 import CIE3SummaryView from '../summary_views/CIE3SummaryView'
 import CIM2SummaryView from '../summary_views/CIM2SummaryView'
 
+import CIPxCIE3SummaryView from "../summary_views/CIPxCIE3SummaryView"
 import CIExCIM2SummaryView from '../summary_views/CIExCIM2SummaryView'
 import CIR2xCIESummaryView from '../summary_views/CIR2xCIESummaryView'
 import CIPxCIESummaryView from '../summary_views/CIPxCIESummaryView'
@@ -51,6 +52,13 @@ export const config: {[id: string] : SummaryViewConfig;} = {
         isWithCCTerm: true,
         isWith2ndData: false
     },
+
+    "cipxcie3": {
+        generator: new SummaryViewGenerator(MixedCCParser, CIPxCIE3SummaryView),
+        isWithCCTerm: true,
+        isWith2ndData: true
+    },
+
     "egsp2-acc": {
         generator: new SummaryViewGenerator(EGSP2AccParser, EGSP2AccSummaryView),
         isWithCCTerm: true,

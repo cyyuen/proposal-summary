@@ -11,7 +11,7 @@ export default class SingleCCParser extends PruParser {
 	protected ct2Premiun:number
 	protected ct2PaymentPeriod: number
 
-	constructor(ANB: number, data: string[][], ct2Assured: string, ct2Premiun: string, ct2PaymentPeriod: string) {
+	constructor(ANB: number, data: string[][] = [["0"]], ct2Assured: string = "0", ct2Premiun: string= "0", ct2PaymentPeriod: string= "0") {
 		super(ANB, data);
 		this.totalFreeInsuredYears = 0;
 
@@ -71,7 +71,12 @@ export default class SingleCCParser extends PruParser {
 			// 总收益率：现金价值 - 累计保费 / 累计保费
 			totalYield: (cashValue - accumulatePremiun) / accumulatePremiun,
 			// 
-			insuredLever: totalInsured / accumulatePremiun
+			insuredLever: totalInsured / accumulatePremiun,
+
+			// not implemented yet
+			cashflow: [],
+			irr: 0,
+			singleRate: 0
 		}
 	}
 }

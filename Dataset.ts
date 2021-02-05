@@ -108,3 +108,15 @@ export class PruCCDataset extends PruPlanDataset {
         this.details = details
     }
 }
+
+export class PruMixedCCDataset extends PruCCDataset {
+    plan1dataset: PruCCDataset
+    plan2dataset: PruCCDataset
+
+    constructor(summary: PruCCSummary, details:PruCCDataLine[], plan1dataset: PruCCDataset, plan2dataset:PruCCDataset) {
+        super(summary, details);
+
+        this.plan1dataset = plan1dataset;
+        this.plan2dataset = plan2dataset;
+    }
+}

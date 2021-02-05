@@ -1,37 +1,38 @@
-import PruParser from "./PruParser"
 import SingleCCParser from './SingleCCParser'
+import {PruMixedCCDataset} from "../Dataset"
 
 /**
  Mixed CC Parser
  suitable for CC plans: CIR2 / CIE / CIM2
  */
-export default class MixedCCParser extends PruParser {
+export default class MixedCCParser extends SingleCCParser {
 
-	constructor(ANB, data1,  data2, ct2Assured, ct2Premiun, ct2PaymentPeriod) {
-		super(ANB, null);
+	protected plan1Parser: SingleCCParser
+	protected plan2Parser: SingleCCParser
+	protected mixedParser: SingleCCParser
+	
 
-		this.ANB = ANB;
-	 	this.ccParser1 = new SingleCCParser(ANB, data1);
-		this.ccParser2 = new SingleCCParser(ANB, data2);
-		this.mixParser = new SingleCCParser(ANB, this.mixCCDetails(data1, data2), ct2Assured, ct2Premiun, ct2PaymentPeriod);
+	constructor(ANB: number, data1: string[][],  data2: string[][], ct2Assured: string, ct2Premiun: string, ct2PaymentPeriod: string) {
+		super(ANB);
+
+	 	this.plan1Parser = new SingleCCParser(ANB, data1);
+		this.plan2Parser = new SingleCCParser(ANB, data2);
+
+		this.mixedParser = new SingleCCParser(ANB, this.mixCCDetails(data1, data2), ct2Assured, ct2Premiun, ct2PaymentPeriod);
 	}
 
-	parse() {
-		const parsedData1 = this.ccParser1.parse();
-		const parsedData2 = this.ccParser2.parse();
+	parse(): PruMixedCCDataset {
+		const parsedData1 = this.plan1Parser.parse();
+		const parsedData2 = this.plan2Parser.parse();
 
-		const parsedMixedData = this.mixParser.parse();
+		let parsedMixedData = this.mixedParser.parse() as PruMixedCCDataset;
+		parsedMixedData.plan1dataset = parsedData1;
+		parsedMixedData.plan2dataset = parsedData2;
 
-		return {
-			subplan1: parsedData1,
-			subplan2: parsedData2,
-
-			summary: parsedMixedData.summary,
-			details: parsedMixedData.details
-		}
+		return parsedMixedData;
 	}
 
-	mixCCDetails(ccDetails1, ccDetails2) {
+	mixCCDetails(ccDetails1: string[][], ccDetails2: string[][]): string[][] {
 		let data = [];
 
 		for (var i = 0, len = ccDetails1.length; i != len; ++i) {

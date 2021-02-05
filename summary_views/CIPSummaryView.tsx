@@ -14,6 +14,18 @@ import {
 
 export default class CIPSummaryView extends PruCCSummaryView {
 
+	getClaimNum() {
+		return 1;
+	}
+
+	getPlanname() {
+		return "CIP";
+	}
+
+	getDiseaseNum() {
+		return 74;
+	}
+
 	renderHighlight() {
 
 		const {
